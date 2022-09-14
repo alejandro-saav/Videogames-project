@@ -1,0 +1,96 @@
+.slider {
+  display: flex;
+  margin: 0 2rem 0 4rem;
+  width: 90vw;
+  scroll-behavior: smooth;
+  /* dragConstraints={{ right: 0, left: -2430 }} */
+  /* overflow-y: hidden; */
+  position: relative;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  /* width: 100%; */
+  /* gap: 1.2rem; */
+  /* width: 10rem; */
+}
+
+.listitems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.elementcontainer a {
+  display: flex;
+  flex-direction: column;
+}
+
+.cover {
+  margin-top: 0.4rem;
+  height: 17rem;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.itemb {
+  justify-self: flex-end;
+}
+
+.item {
+  min-height: 20rem;
+  /* min-width: 30rem; */
+  /* width: 14rem;  */
+  /* width: 20rem; */
+  width: 20%;
+  /* width: 100%; */
+  padding: 10px;
+  /* margin: 0; */
+  display: flex;
+  /* transition: 200ms; */
+}
+
+.arrow {
+  position: absolute;
+  z-index: 2;
+  font-size: 4rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* border: 2px solid red; */
+  padding: 0 0.2rem 0.4rem 0.2rem;
+  cursor: pointer;
+  color: rgb(255, 59, 59);
+  box-shadow: 0 0 5px #666;
+}
+
+.arrow:hover {
+  transition: 500ms;
+  background-color: rgba(0, 0, 0, 0.6);
+  outline: 1px solid #666;
+}
+
+.rarrow {
+  top: 45%;
+  transform: translateY(-50%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  right: -1.5rem;
+}
+.larrow {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  top: 45%;
+  transform: translateY(-50%);
+  left: -1.5rem;
+}
+
+@media (min-width: 20em) {
+  .container {
+    flex-direction: column;
+  }
+  .arrow {
+    display: none;
+  }
+}

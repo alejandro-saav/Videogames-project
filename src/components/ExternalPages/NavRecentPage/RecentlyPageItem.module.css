@@ -1,0 +1,39 @@
+.maincontainer {
+  padding: 5px;
+  height: 20rem;
+}
+
+.cover {
+  filter: brightness(95%);
+  /* filter: brightness(100%); */
+}
+
+.cover:hover {
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 0.3fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 0.4rem;
+}
+
+.title {
+  grid-area: 1 / 1 / 2 / 3;
+  color: #111;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.genre {
+  grid-area: 2 / 1 / 3 / 2;
+  font-size: 0.8rem;
+}
+.score {
+  grid-area: 2 / 2 / 3 / 3;
+  justify-self: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff2;
+}

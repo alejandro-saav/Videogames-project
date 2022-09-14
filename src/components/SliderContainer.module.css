@@ -1,0 +1,12 @@
+.carousel {
+  /* cursor: grab; */
+  /* background-color: rgba(250, 0, 50, 0.637); */
+  margin: 0 2.5rem;
+  padding: 0 1rem;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.innercarousel {
+  display: flex;
+}

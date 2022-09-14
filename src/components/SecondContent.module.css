@@ -1,0 +1,32 @@
+.maincontainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 3rem;
+  margin-top: 3rem;
+  text-align: center;
+  column-gap: 15px;
+  /* background-color: #333; */
+}
+
+.itemcontainer {
+  /* border: 2px solid #ddd; */
+  /* padding: 1rem; */
+  /* box-shadow: 0 0 5px #333; */
+  border-radius: 5px;
+}
+
+.maincontainer div {
+  /* margin-left: 15px; */
+  /* box-shadow: 0 0 30px rgb(240, 1, 50); */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.maincontainer h3 {
+  background-color: #222;
+  padding: 5px;
+  color: rgb(255, 4, 4);
+  text-shadow: 0 0 15px rgb(255, 66, 66);
+  /* box-shadow: 0 0 30px rgb(255, 25, 71); */
+}

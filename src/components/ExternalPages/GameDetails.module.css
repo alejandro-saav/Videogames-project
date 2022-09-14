@@ -1,0 +1,136 @@
+.container {
+  color: #e27d;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.2rem;
+  margin-top: 2rem;
+  /* background-color: #41b3a3; */
+  background: linear-gradient(#41b3a3, #41b3a3);
+  border-top: 2px solid #41b3a3;
+  border-bottom: 2px solid #41b3a3;
+  margin-bottom: 0;
+  height: 4rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-left: 2rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+.details {
+  font-weight: bold;
+  display: flex;
+  gap: 15px;
+  padding-right: 20px;
+  /* border: 2px solid #41b3a3; */
+  justify-content: center;
+  align-items: center;
+}
+
+.details div {
+  /* padding-top: 3px; */
+  padding: 3px 0.5rem;
+  display: flex;
+  flex-direction: column;
+  /* width: 8rem; */
+  text-align: center;
+}
+
+.details div span:last-child {
+  color: #424242;
+  font-size: 1.08rem;
+}
+
+.fecha {
+  padding-top: 1px !important;
+  border-right: 2px solid #41b3a3;
+  align-self: center;
+}
+
+.puntuacioncontainer {
+  border-right: 2px solid #41b3a3;
+  border-left: 2px solid #41b3a3;
+  align-self: center;
+}
+
+.puntuacion {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.developers {
+  border-right: 2px solid #41b3a3;
+  /* padding-top: 3px !important; */
+  align-self: center;
+}
+
+.desarrollador {
+  text-align: center;
+  padding-top: 1px;
+}
+
+.date {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.contentcontainer {
+  /* background-color: red; */
+  margin: 0 4rem;
+  display: grid;
+  grid-template-columns: 0.8fr repeat(2, 1fr) 0.8fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 26rem;
+  border: solid #eee;
+}
+.covercontainer {
+  /* background-color: #ff2; */
+  grid-area: 1 / 1 / 3 / 2;
+  border-right: solid #eee;
+  /* height: 100%; */
+}
+
+.covercontainer img {
+  height: 100%;
+  width: 100%;
+  /* border-right: solid #eee; */
+}
+.videocontainer {
+  background-color: #fff;
+  grid-area: 1 / 2 / 3 / 4;
+  border-right: solid #eee;
+  /* height: 100%; */
+  /* border: solid #eee; */
+}
+
+.videocontainer iframe {
+  border: none;
+}
+.thirdcontainer {
+  background-color: #eeeddd;
+  grid-area: 1 / 4 / 2 / 5;
+  border-bottom: solid #eee;
+  height: 13rem;
+  /* border: solid #666; */
+}
+
+.thirdcontainer img {
+  height: 100%;
+  width: 100%;
+}
+.fourthcontainer {
+  /* border: solid #666; */
+  /* height: 50%; */
+  height: 13rem;
+  background-color: red;
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.fourthcontainer img {
+  height: 100%;
+  width: 100%;
+}

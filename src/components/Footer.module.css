@@ -1,0 +1,72 @@
+.maincontainer {
+  /* height: 16rem; */
+  background-color: #222;
+  /* padding: 4rem; */
+  border-top: 5px solid #777;
+}
+
+.contentcontainer {
+  margin: 2rem 16rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.paragraph {
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  word-wrap: break-word;
+  color: #ddd;
+}
+
+.iconcontainer {
+  display: flex;
+  width: 12rem;
+  justify-content: center;
+}
+
+.iconcontainer img {
+  /* border: 2px solid #fff; */
+  stroke: #fff;
+  /* width: 50%; */
+  /* height: 50%; */
+}
+
+.buttonscontainer {
+}
+
+.buttonscontainer ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  word-wrap: break-word;
+  width: 12rem;
+  color: #fff;
+}
+
+.buttonscontainer ul li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 5rem;
+  border: 1px solid #fff;
+}
+
+.author {
+  width: 100%;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}

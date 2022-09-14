@@ -1,0 +1,45 @@
+.list {
+  font-size: 15px;
+  cursor: default;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  display: none;
+  height: 145px;
+  width: 140px;
+  position: absolute;
+  background-color: rgb(240, 1, 50);
+  border-radius: 5px;
+  border: 4px solid rgb(155, 0, 0);
+  border-top-style: none;
+  z-index: 500;
+}
+
+.list li {
+  cursor: pointer;
+  width: 85%;
+  padding: 10px 10px;
+}
+
+.list li:hover {
+  background-color: rgb(240, 100, 150);
+  border-radius: 5px;
+}
+
+.firstlist {
+  left: 120px;
+  width: 150px !important;
+}
+
+.secondlist {
+  left: 230px;
+}
+
+.lastlist {
+  left: 400px;
+}

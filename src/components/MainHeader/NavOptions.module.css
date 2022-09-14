@@ -1,0 +1,19 @@
+.list {
+  list-style: none;
+  display: flex;
+  gap: 2.8rem;
+  align-items: center;
+  padding-left: 35px;
+}
+
+.dropdown {
+  height: 20px;
+  padding: 20px 0;
+}
+
+.dropdown a:hover + ul {
+  display: flex;
+}
+.dropdown:hover ul {
+  display: flex;
+}
