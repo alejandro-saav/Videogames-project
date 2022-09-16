@@ -1,14 +1,14 @@
-git config --global user.name NexxRoxx
-git config --global user.email alejandroTPD@hotmail.com
-git add -A
-git commit -m 'Initial Commit'
-git status
-git reset --hard HEAD
-git log
-git reset --hard "id of the commit"
-git branch
-git branch new-branch
-git checkout new-branch //Changing branch
-git merge new-branch //Fusionar branches
-git remote add origin https://github.com/NexxRoxx/Videogames-project.git
-git push origin master
+//* git config --global user.name NexxRoxx
+//* git config --global user.email alejandroTPD@hotmail.com
+//* git add -A
+//* git commit -m 'Initial Commit'
+//* git status
+//* git reset --hard HEAD
+//* git log
+//* git reset --hard "id of the commit"
+//* git branch
+//* git branch new-branch
+//* git checkout new-branch //Changing branch
+//* git merge new-branch //Fusionar branches
+//* git remote add origin https://github.com/NexxRoxx/Videogames-project.git
+//* git push origin master

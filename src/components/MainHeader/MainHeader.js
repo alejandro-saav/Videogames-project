@@ -14,7 +14,7 @@ const MainHeader = () => {
     context.setNewFuckingWindow("");
   };
   return (
-    <nav>
+    <nav className={classes.navigation}>
       <div className={classes.container}>
         <div className={classes.options}>
           <span onClick={clickHandler}>OACS</span>

@@ -2,31 +2,45 @@ import classes from "./MainContent.module.css";
 import SliderContainer from "./SliderContainer";
 import { motion } from "framer-motion";
 import MainContentItem from "./MainContentItem";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import GamesContext from "./store/games-context";
 
 const MainContent = (props) => {
   const titleMaxLength = 20;
+  // const [cardsRender, setCardsRender] = useState(5);
   const gamesCtx = useContext(GamesContext);
   const hasItem = gamesCtx.mainGames ? true : false;
   const [numberOfCards, setNumberOfCards] = useState(0);
 
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 480px)").matches
+  );
+
+  useEffect(() => {
+    window.matchMedia("(max-width: 480px)").addEventListener("change", (e) => {
+      setMatches(e.matches);
+    });
+  }, []);
+  // console.log(matches);
+
+  let cardsRender = matches ? 1 : 5;
   const clickRightHandler = () => {
     if (numberOfCards === 10) {
       return;
     }
-    setNumberOfCards((prev) => prev + 5);
+    setNumberOfCards((prev) => prev + cardsRender);
   };
 
   const clickLeftHandler = () => {
     if (numberOfCards === 0) {
       return;
     }
-    setNumberOfCards((prev) => prev - 5);
+    setNumberOfCards((prev) => prev - cardsRender);
   };
 
   return (
     <>
+      {matches && <div>HOLA MUNDO</div>}
       {hasItem && (
         // <SliderContainer>
         <div className={classes.slider}>
@@ -44,7 +58,10 @@ const MainContent = (props) => {
           </span>
           <div className={classes.container}>
             {props.games.map((item, index) => {
-              if (index < numberOfCards + 5 && index >= numberOfCards) {
+              if (
+                index < numberOfCards + cardsRender &&
+                index >= numberOfCards
+              ) {
                 return (
                   // <motion.div className={classes.item} key={index}>
                   <div className={classes.item} key={index}>

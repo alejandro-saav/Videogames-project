@@ -1,3 +1,7 @@
+.navigation {
+  width: 100%;
+}
+
 .container {
   height: 51px;
   display: flex;
@@ -12,6 +16,8 @@
   font-weight: 800;
   /* background-color: #fa5252; */
   background-color: rgb(240, 1, 50);
+  width: 100%;
+  overflow: hidden;
 }
 
 .options {
@@ -54,12 +60,11 @@
   display: none;
 }
 
-@media (max-width: 39em) {
-  html {
-    font-size: 50%;
+@media (min-width: 480px) {
+  .container {
+    /* flex-direction: column; */
   }
-
-  .btnmobilenav {
-    display: block;
+  .arrow {
+    /* display: none; */
   }
 }
