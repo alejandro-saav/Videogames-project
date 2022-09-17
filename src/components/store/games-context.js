@@ -152,7 +152,7 @@ export const GamesContextProvider = (props) => {
     };
     fetchGames(
       {
-        url: "https://api.igdb.com/v4/multiquery",
+        url: "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/multiquery",
         method: "POST",
         body: bodyHttpStr,
       },

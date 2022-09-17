@@ -44,7 +44,7 @@ const SecondContent = () => {
             <h3>PC</h3>
             {renderItem(gamesCtx.gamesByPlatform[2].pc)}
           </div>
-          <div className={classes.itemcontainer}>
+          <div className={`${classes.itemcontainer} ${classes.forth}`}>
             <h3>NINTENDO SWITCH</h3>
             {renderItem(gamesCtx.gamesByPlatform[3].switch)}
           </div>
