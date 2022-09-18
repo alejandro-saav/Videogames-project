@@ -35,19 +35,19 @@ const GameDetails = () => {
         </div>
         <div className={classes.details}>
           <div className={classes.puntuacioncontainer}>
-            <span>Puntuacion</span>
+            <span className={classes.subtitle}>Puntuacion</span>
             <span className={classes.puntuacion}>
               {gamesCtx.currentGame[0].score}
             </span>
           </div>
           <div className={classes.developers}>
-            <span>Desarrolladores</span>
+            <span className={classes.subtitle}>Desarrolladores</span>
             <span className={classes.desarrollador}>
               {gamesCtx.currentGame[0].company}
             </span>
           </div>
           <div className={classes.fecha}>
-            <span>Fecha de Lanzamiento:</span>
+            <span className={classes.subtitle}>Fecha de Lanzamiento:</span>
             <span className={classes.date}>{formatDate}</span>
           </div>
         </div>

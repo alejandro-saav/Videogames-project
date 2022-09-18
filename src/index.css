@@ -2,12 +2,12 @@
 }
 
 html {
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 body {
   /* background-color: #222; */
-  width: 100vw;
+  /* width: 100vw; */
   /* height: 100vh; */
   box-sizing: border-box;
   background-color: #eee;

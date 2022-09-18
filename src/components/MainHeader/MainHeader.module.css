@@ -59,12 +59,3 @@
 .iconmobilenav[name="close-outline"] {
   display: none;
 }
-
-@media (min-width: 480px) {
-  .container {
-    /* flex-direction: column; */
-  }
-  .arrow {
-    /* display: none; */
-  }
-}
