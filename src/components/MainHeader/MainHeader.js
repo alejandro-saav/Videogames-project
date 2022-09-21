@@ -14,10 +14,10 @@ const MainHeader = () => {
     context.setNewFuckingWindow("");
   };
   return (
-    <nav className={classes.navigation}>
+    <nav className={`${classes.navigation} ${classes.nav_open}`}>
       <div className={classes.container}>
+        <span onClick={clickHandler}>OACS</span>
         <div className={classes.options}>
-          <span onClick={clickHandler}>OACS</span>
           <NavOptions />
         </div>
         <div className={classes.search}>
@@ -26,6 +26,35 @@ const MainHeader = () => {
             <SignIn />
           </ul>
         </div>
+        {/* <nav className={`${classes.main_nav} ${classes.nav_open}`}>
+          <ul className={classes.main_nav_list}>
+            <li>
+              <a className={classes.main_nav_link} href="#">
+                Games
+              </a>
+            </li>
+            <li>
+              <a className={classes.main_nav_link} href="#">
+                Games Categories
+              </a>
+            </li>
+            <li>
+              <a className={classes.main_nav_link} href="#">
+                Platforms
+              </a>
+            </li>
+            <li>
+              <a className={classes.main_nav_link} href="#">
+                Search
+              </a>
+            </li>
+            <li>
+              <a className={classes.main_nav_link} href="#">
+                Sign In
+              </a>
+            </li>
+          </ul>
+        </nav> */}
         <div className={classes.btnmobilenav}>
           {/* <ion-icon
             className="icon-mobile-nav"

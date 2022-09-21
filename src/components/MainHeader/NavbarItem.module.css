@@ -10,8 +10,8 @@
   align-items: flex-start;
   list-style: none;
   display: none;
-  height: 145px;
-  width: 140px;
+  height: 160px;
+  width: 160px;
   position: absolute;
   background-color: rgb(240, 1, 50);
   border-radius: 5px;
@@ -32,14 +32,20 @@
 }
 
 .firstlist {
-  left: 120px;
-  width: 150px !important;
+  /* left: 120px; */
+  /* width: 160px !important; */
 }
 
 .secondlist {
-  left: 230px;
+  /* left: 230px; */
 }
 
 .lastlist {
-  left: 400px;
+  /* left: 400px; */
+}
+
+@media (max-width: 480px) {
+  .list {
+    display: none;
+  }
 }

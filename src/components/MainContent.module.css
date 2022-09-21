@@ -90,6 +90,7 @@
 @media (max-width: 480px) {
   .slider {
     margin: 0;
+    width: 100%;
   }
   .arrow {
     font-size: 2rem;

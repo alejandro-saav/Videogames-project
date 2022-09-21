@@ -3,7 +3,16 @@ import { useEffect, useState } from "react";
 const Pagination = (props) => {
   const pageNumbers = [];
   const [pageIncremental, setPageIncremental] = useState(1);
+
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 480px)").matches
+  );
+
   useEffect(() => {
+    window.matchMedia("(max-width: 480px)").addEventListener("change", (e) => {
+      setMatches(e.matches);
+    });
+
     if (props.current <= 10) {
       setPageIncremental(1);
       return;
@@ -17,7 +26,8 @@ const Pagination = (props) => {
       return;
     }
   }, [props.current]);
-  for (let i = pageIncremental; i <= pageIncremental + 9; i++) {
+  let numeration = !matches ? 9 : 4;
+  for (let i = pageIncremental; i <= pageIncremental + numeration; i++) {
     pageNumbers.push(i);
   }
   return (
@@ -26,7 +36,7 @@ const Pagination = (props) => {
         <li
           onClick={() => {
             if (pageIncremental === 1) return;
-            setPageIncremental((prev) => prev - 10);
+            setPageIncremental((prev) => prev - (numeration + 1));
             // props.paginate((prev) => pageIncremental - 10);
           }}
         >
@@ -49,7 +59,7 @@ const Pagination = (props) => {
         <li
           onClick={() => {
             if (pageIncremental === 21) return;
-            setPageIncremental((prev) => prev + 10);
+            setPageIncremental((prev) => prev + (numeration + 1));
             // props.paginate((prev) => pageIncremental + 10);
           }}
         >
