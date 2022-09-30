@@ -142,6 +142,7 @@ export const GamesContextProvider = (props) => {
   const [currentGame, setCurrentGame] = useState([]);
   const { isLoading, error, sendRequest: fetchGames } = useFetch();
   const [newFuckingWindow, setNewFuckingWindow] = useState("");
+  const [navMobState, setNavMobState] = useState(false);
   //   let itemsList;
   useEffect(() => {
     console.log("HI!  ");
@@ -219,6 +220,8 @@ export const GamesContextProvider = (props) => {
     isLoading,
     currentGame,
     setCurrentGames,
+    navMobState,
+    setNavMobState,
   };
 
   return (

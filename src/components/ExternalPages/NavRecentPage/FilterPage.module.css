@@ -43,3 +43,12 @@
   grid-area: 2 / 2 / 3 / 3;
   width: 16rem;
 }
+
+@media (max-width: 480px) {
+  .maincontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.5rem 0.5rem;
+  }
+}

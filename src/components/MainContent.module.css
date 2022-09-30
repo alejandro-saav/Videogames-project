@@ -87,6 +87,12 @@
   left: -1.5rem;
 }
 
+@media (max-width: 1020px) {
+  .slider {
+    margin: 0 5%;
+  }
+}
+
 @media (max-width: 480px) {
   .slider {
     margin: 0;

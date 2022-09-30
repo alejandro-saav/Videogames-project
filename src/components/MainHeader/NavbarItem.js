@@ -10,9 +10,10 @@ const NavbarItem = (props) => {
     const value = e.target.innerText.replace(/\s+/g, "").toLowerCase();
     console.log(value);
     gamesCtx.setNewFuckingWindow(value);
+    gamesCtx.setNavMobState((prev) => !prev);
   };
   const navOptions = {
-    games: ["Recently Released", "Coming Soon", "Top 100", "Reviews"],
+    games: ["Recently Released", "Coming Soon", "Top 100", "Most Hyped Games"],
     gameCategories: ["Shooters", "MMO", "Platforms", "Indies"],
     platforms: ["PS4", "Xbox", "PC", "Nintendo"],
   };

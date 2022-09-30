@@ -12,7 +12,7 @@
   padding: 0;
   display: flex;
   /* gap: 0.2rem; */
-  margin: 0;
+  margin: 0 auto;
   width: 50%;
 }
 .maincontainer li {
@@ -39,6 +39,9 @@
 
 @media (max-width: 480px) {
   .maincontainer {
-    margin: 1.5rem;
+    margin: 1rem 1.5rem;
+  }
+  .maincontainer ul {
+    margin: 0;
   }
 }

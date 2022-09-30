@@ -15,15 +15,30 @@ const MainContent = (props) => {
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 480px)").matches
   );
-
+  const [matchesB, setMatchesB] = useState(
+    window.matchMedia("(max-width: 1020px)").matches
+  );
+  // let cardsRender = 5;
   useEffect(() => {
     window.matchMedia("(max-width: 480px)").addEventListener("change", (e) => {
       setMatches(e.matches);
     });
+    window.matchMedia("(max-width: 1020px)").addEventListener("change", (e) => {
+      setMatchesB(e.matches);
+    });
   }, []);
-  // console.log(matches);
+  console.log(matches);
+  let cardsRender = 5;
+  if (matchesB) {
+    cardsRender = 3;
+  }
+  if (matches) {
+    cardsRender = 1;
+  }
 
-  let cardsRender = matches ? 1 : 5;
+  // let cardsRender = matches ? 1 : 5;
+  // cardsRender = matchesB ? 3 : 5;
+  console.log(cardsRender);
   const clickRightHandler = () => {
     if (numberOfCards === 10) {
       return;
@@ -40,7 +55,6 @@ const MainContent = (props) => {
 
   return (
     <>
-      {matches && <div>HOLA MUNDO</div>}
       {hasItem && (
         // <SliderContainer>
         <div className={classes.slider}>

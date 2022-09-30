@@ -45,6 +45,18 @@ function App() {
       />
     );
   }
+
+  if (gamesCtx.newFuckingWindow === "mosthypedgames") {
+    externalPageCondition = (
+      <RecentylPage
+        title={"Most Hyped Games"}
+        highlighted={"scoreFormated"}
+        highlightedType={"Score:"}
+        query={query.coopMultiplayer}
+      />
+    );
+  }
+
   if (gamesCtx.newFuckingWindow === "shooters") {
     externalPageCondition = (
       <RecentylPage

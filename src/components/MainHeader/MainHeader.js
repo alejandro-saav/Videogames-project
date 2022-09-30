@@ -9,18 +9,22 @@ import closeOutline from "../../img/close.svg";
 
 const MainHeader = () => {
   const context = useContext(GamesContext);
-  const [navStyles, setNavStyles] = useState(true);
+  const [navStyles, setNavStyles] = useState(false);
   console.log(context);
   const clickHandler = () => {
     context.setNewFuckingWindow(false);
   };
 
   const menuOnclickHandler = () => {
-    setNavStyles((prev) => !prev);
+    context.setNavMobState((prev) => !prev);
   };
   //* ${classes.nav_open}
   return (
-    <nav className={`${classes.navigation} ${navStyles && classes.nav_open}`}>
+    <nav
+      className={`${classes.navigation} ${
+        context.navMobState && classes.nav_open
+      }`}
+    >
       <div className={classes.container}>
         <div className={classes.logocontainer}>
           <span onClick={clickHandler} className={classes.logo}>
@@ -33,10 +37,18 @@ const MainHeader = () => {
             onClick={menuOnclickHandler}
           />
         </div>
-        <div className={`${classes.options} ${navStyles && classes.nav_open}`}>
+        <div
+          className={`${classes.options} ${
+            context.navMobState && classes.nav_open
+          }`}
+        >
           <NavOptions />
         </div>
-        <div className={`${classes.search} ${navStyles && classes.nav_open}`}>
+        <div
+          className={`${classes.search} ${
+            context.navMobState && classes.nav_open
+          }`}
+        >
           <ul>
             <Search />
             <SignIn />
