@@ -1,9 +1,7 @@
+import classes from "./SignIn.module.css";
+
 const SignIn = () => {
-  return (
-    <li>
-      <a>Sign in</a>
-    </li>
-  );
+  return <button className={classes.btn}>Sign In</button>;
 };
 
 export default SignIn;

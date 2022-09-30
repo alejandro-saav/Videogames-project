@@ -20,13 +20,20 @@
   overflow: hidden;
 }
 
+.logocontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .options {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.container span {
+.logo {
   margin-left: 2.4rem;
   border: 3px solid rgb(76, 0, 255);
   border-radius: 15px;
@@ -52,9 +59,10 @@
 }
 
 .iconmobilenav {
-  height: 3.8rem;
-  width: 3.8rem;
+  height: 2.5rem;
+  width: 2.5rem;
   color: #333;
+  display: none;
 }
 
 .iconmobilenav[name="close-outline"] {
@@ -88,12 +96,28 @@
 }
 
 @media (max-width: 480px) {
+  .search {
+    display: none;
+  }
+
+  .options {
+    display: none;
+  }
   .btnmobilenav {
     /* padding-right: 1rem;
     display: block; */
   }
-  .search ul {
-    /* display: none; */
+  /* .search {
+    display: none;
+  }
+
+  .options {
+    display: none;
+  } */
+
+  .iconmobilenav {
+    display: block;
+    padding-right: 15px;
   }
 
   .navigation {
@@ -101,6 +125,21 @@
   }
 
   .navigation {
+    /* Hide navigation */
+    /* Allows NO transitions at all */
+    /* display: none; */
+
+    /* 1) Hide it visually */
+    /* opacity: 0; */
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    /* pointer-events: none; */
+
+    /* 3) Hide it from screen readers */
+    /* visibility: hidden; */
+  }
+
+  .nav_open.navigation {
     background-color: rgba(240, 1, 49);
     position: absolute;
     top: 0;
@@ -114,21 +153,6 @@
     align-items: center;
     transition: all 0.5s ease-in;
 
-    /* Hide navigation */
-    /* Allows NO transitions at all */
-    /* display: none; */
-
-    /* 1) Hide it visually */
-    opacity: 0;
-
-    /* 2) Make it unaccessible to mouse and keyboard */
-    pointer-events: none;
-
-    /* 3) Hide it from screen readers */
-    visibility: hidden;
-  }
-
-  .nav_open.navigation {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
@@ -140,19 +164,33 @@
     flex-direction: column;
     height: 100%;
     justify-content: flex-start;
-    margin-top: 3rem;
   }
 
-  .container span {
+  .logocontainer {
     order: -2;
+  }
+
+  .nav_open.options {
+    display: block;
+  }
+
+  .nav_open.search {
+    display: block;
   }
 
   .search {
     order: -1;
+    /* display: none; */
+  }
+
+  .search ul {
+    gap: 1.2rem;
   }
 
   .options {
+    /* display: none; */
     width: 100%;
+    /* padding: 0; */
   }
   /*
   .main_nav_list {
