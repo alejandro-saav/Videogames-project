@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { GamesContextProvider } from "./components/store/games-context";
@@ -8,9 +9,11 @@ import { GamesContextProvider } from "./components/store/games-context";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-  <GamesContextProvider>
-    <App />
-  </GamesContextProvider>
+  <BrowserRouter>
+    <GamesContextProvider>
+      <App />
+    </GamesContextProvider>
+  </BrowserRouter>
   // </React.StrictMode>
 );
 
