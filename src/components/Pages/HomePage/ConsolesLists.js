@@ -1,6 +1,6 @@
-import ConsoleReleasedItem from "./ConsoleReleasedItem";
-import classes from "./SecondContent.module.css";
-import GamesContext from "./store/games-context";
+import ListsItem from "./ListsItem";
+import classes from "./ConsolesLists.module.css";
+import GamesContext from "../../store/games-context";
 import { useState, useContext } from "react";
 
 const SecondContent = () => {
@@ -23,7 +23,7 @@ const SecondContent = () => {
   const renderItem = (gamesData) => {
     return gamesData.map((item, index) => {
       return (
-        <ConsoleReleasedItem
+        <ListsItem
           key={index}
           name={item.name}
           cover={item.cover.url}

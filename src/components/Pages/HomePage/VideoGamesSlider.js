@@ -1,13 +1,9 @@
-import classes from "./MainContent.module.css";
-import SliderContainer from "./SliderContainer";
-import { motion } from "framer-motion";
-import MainContentItem from "./MainContentItem";
+import classes from "./VideoGamesSlider.module.css";
+import SliderItem from "./SliderItem";
 import { useContext, useState, useEffect } from "react";
-import GamesContext from "./store/games-context";
+import GamesContext from "../../store/games-context";
 
 const MainContent = (props) => {
-  const titleMaxLength = 20;
-  // const [cardsRender, setCardsRender] = useState(5);
   const gamesCtx = useContext(GamesContext);
   const hasItem = gamesCtx.mainGames ? true : false;
   const [numberOfCards, setNumberOfCards] = useState(0);
@@ -18,7 +14,7 @@ const MainContent = (props) => {
   const [matchesB, setMatchesB] = useState(
     window.matchMedia("(max-width: 1020px)").matches
   );
-  // let cardsRender = 5;
+
   useEffect(() => {
     window.matchMedia("(max-width: 480px)").addEventListener("change", (e) => {
       setMatches(e.matches);
@@ -27,7 +23,6 @@ const MainContent = (props) => {
       setMatchesB(e.matches);
     });
   }, []);
-  console.log(matches);
   let cardsRender = 5;
   if (matchesB) {
     cardsRender = 3;
@@ -36,9 +31,6 @@ const MainContent = (props) => {
     cardsRender = 1;
   }
 
-  // let cardsRender = matches ? 1 : 5;
-  // cardsRender = matchesB ? 3 : 5;
-  console.log(cardsRender);
   const clickRightHandler = () => {
     if (numberOfCards === 10) {
       return;
@@ -56,7 +48,6 @@ const MainContent = (props) => {
   return (
     <>
       {hasItem && (
-        // <SliderContainer>
         <div className={classes.slider}>
           <span
             className={`${classes.rarrow} ${classes.arrow}`}
@@ -77,9 +68,8 @@ const MainContent = (props) => {
                 index >= numberOfCards
               ) {
                 return (
-                  // <motion.div className={classes.item} key={index}>
                   <div className={classes.item} key={index}>
-                    <MainContentItem
+                    <SliderItem
                       title={item.name}
                       genre={item.genre}
                       cover={item.cover.replace("t_thumb", "t_720p")}
@@ -94,13 +84,11 @@ const MainContent = (props) => {
                       game_modes={item.game_modes}
                     />
                   </div>
-                  // </motion.div>
                 );
               }
             })}
           </div>
         </div>
-        /* </SliderContainer> */
       )}
     </>
   );

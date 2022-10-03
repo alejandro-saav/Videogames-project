@@ -1,7 +1,7 @@
 import classes from "./SummaryContent.module.css";
 import { useContext } from "react";
-import GamesContext from "../store/games-context";
-import nocover from "../../img/nocover.png";
+import GamesContext from "../../store/games-context";
+import nocover from "../../../img/nocover.png";
 const SummaryContent = () => {
   const gamesCtx = useContext(GamesContext);
   const hasGameModes = gamesCtx.currentGame[0].game_modes ? (
@@ -23,7 +23,6 @@ const SummaryContent = () => {
           <div className={classes.relateditem}>
             <img className={classes.cover} src={hasCover} />
             <span>{`${item.name}`}</span>
-            {/* <span>{item.genres[0].name}</span> */}
           </div>
         );
       }
@@ -31,7 +30,6 @@ const SummaryContent = () => {
   ) : (
     <span>No similar games found :(</span>
   );
-  // console.log(gamesCtx.currentGame[0]);
   return (
     <div className={classes.container}>
       <div className={classes.maincontainer}>

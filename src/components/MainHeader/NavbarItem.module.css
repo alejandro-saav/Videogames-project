@@ -45,6 +45,11 @@
   /* left: 400px; */
 }
 
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
 @media (max-width: 480px) {
   .list {
     display: none;

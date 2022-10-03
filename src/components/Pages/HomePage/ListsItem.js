@@ -1,11 +1,10 @@
-import classes from "./ConsoleReleasedItem.module.css";
-import imagen from "../../src/img/cover.jpg";
+import classes from "./ListsItem.module.css";
 import { useContext } from "react";
-import GamesContext from "./store/games-context";
-import nocover from "./../img/nocover.png";
+import GamesContext from "../../store/games-context";
+import nocover from "../../../img/nocover.png";
+import { NavLink } from "react-router-dom";
 
 const ConsoleReleasedItem = (props) => {
-  // console.log(props.cover);
   const gamesCtx = useContext(GamesContext);
   const formatedCover = `https:${props.cover.replace("t_thumb", "t_720p")}`;
   const nameFormated =
@@ -42,11 +41,15 @@ const ConsoleReleasedItem = (props) => {
     gamesCtx.setNewFuckingWindow("gamedetails");
   };
   return (
-    <div className={classes.itemcontainer} onClick={itemOnClickHandler}>
+    <NavLink
+      to={`/game/${props.name.replaceAll(" ", "")}`}
+      className={classes.itemcontainer}
+      onClick={itemOnClickHandler}
+    >
       <img className={classes.img} src={formatedCover} />
       <span className={classes.title}>{nameFormated}</span>
       <span className={classes.genre}>{genreFormated}</span>
-    </div>
+    </NavLink>
   );
 };
 

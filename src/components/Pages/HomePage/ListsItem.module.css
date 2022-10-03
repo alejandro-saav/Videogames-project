@@ -13,6 +13,7 @@
   /* filter: brightness(100%); */
   cursor: pointer;
   box-shadow: 0 0 2px #666;
+  text-decoration: none;
 }
 
 .itemcontainer:hover {

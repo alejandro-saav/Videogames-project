@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import GamesContext from "../../store/games-context";
-import classes from "./RecentlyPageItem.module.css";
+import classes from "./NavPageGamesItem.module.css";
 import nocover from "../../../img/nocover.png";
+import { NavLink } from "react-router-dom";
 
 const RecentlyPageItem = (props) => {
   const formatedCover = `https:${props.cover.replace("t_thumb", "t_720p")}`;

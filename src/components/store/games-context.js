@@ -10,12 +10,8 @@ const GamesContext = React.createContext({
   newFuckingWindow: "",
 });
 
-// const fields = `fields name,genres.name,aggregated_rating,cover.url,involved_companies.company.name,videos.video_id,screenshots.url,first_release_date,summary,platforms.name,similar_games.*,game_modes.name;`;
 const fields = `fields name,genres.name,aggregated_rating,cover.url,involved_companies.company.name,videos.video_id,screenshots.url,first_release_date,summary,platforms.name,similar_games.name,similar_games.cover.url,similar_games.genres.name,game_modes.name;`;
-// const nullExcludeStr = `where name != null & genres.name != null & aggregated_rating != null & cover.url != null & involved_companies.company.name != null & videos.video_id != null & screenshots.url != null & first_release_date != null & summary != null & platforms != null & similar_games != null`;
-// const fileds = ``;
 const nullExcludeStr = `where name != null & genres.name != null & aggregated_rating != null & cover.url != null & videos.video_id != null`;
-//* involved_companies.company.name screenshots.url first_release_date summary platforms similar_games
 const newMainQuery = `query games "Main Games" {${fields}
     sort total_rating desc; ${nullExcludeStr} & first_release_date > 1654636672;limit 15;};`;
 
@@ -29,9 +25,7 @@ const platformsHttpStr = `query games "PS4 Games" {${fields} sort first_release_
                ${nullExcludeStr} & first_release_date < 1660770765 & release_dates.platform = 6; limit 10;};
                query games "SWITCH Games" {${fields} sort first_release_date desc;
                ${nullExcludeStr} & first_release_date < 1660770765 & release_dates.platform = 130; limit 10;};`;
-// const bodyHttpStr = `${newMainQuery}`;
-// const r = `${recentHttpStr}`;
-// const p = `${platformsHttpStr}`;
+
 const bodyHttpStr = `${newMainQuery + recentHttpStr + platformsHttpStr}`;
 
 const getGames = (data) => {
@@ -71,69 +65,15 @@ const getGames = (data) => {
       game_modes: item.game_modes,
     });
   }
-  // mainGamesList.push(data[0].result);
-  // recentList.push(data[1].result);
+
   platformList.push(
     { ps4: data[2].result },
     { xbox: data[3].result },
     { pc: data[4].result },
     { switch: data[5].result }
   );
-  // console.log(mainGamesList);
-  //   return {
-  //     main: mainGamesList,
-  //     second: recentList,
-  //     third: platformList,
-  //   };
   return [mainGamesList, recentList, platformList];
 };
-// const getMainGames = (data) => {
-//   const mainGamesList = [];
-//   console.log(data);
-//   for (const item of data[0].result) {
-//     mainGamesList.push({
-//       name: item.name,
-//       genre: item.genres[0].name,
-//       review: item.aggregated_rating,
-//       cover: `https:${item.cover.url}`,
-//       date: item.first_release_date,
-//       company: item.involved_companies[0].company.name,
-//       screenshot: item.screenshots,
-//       video: item.videos[0].video_id,
-//     });
-//   }
-//   return [mainGamesList];
-// };
-
-// const getRecentGames = (data) => {
-//   const recentList = [];
-//   for (const item of data[0].result) {
-//     recentList.push({
-//       name: item.name,
-//       genre: item.genres[0].name,
-//       review: item.aggregated_rating,
-//       cover: `https:${item.cover.url}`,
-//       date: item.first_release_date,
-//       company: item.involved_companies[0].company.name,
-//       screenshot: item.screenshots,
-//       video: item.videos[0].video_id,
-//     });
-//   }
-//   return [recentList];
-// };
-
-// const getPlatformGames = (data) => {
-//   const platformList = [];
-//   console.log(`platform data = ${data}`);
-//   platformList.push(
-//     { ps4: data[0].result },
-//     { xbox: data[1].result },
-//     { pc: data[2].result },
-//     { switch: data[3].result }
-//   );
-
-//   return [platformList];
-// };
 
 export const GamesContextProvider = (props) => {
   const [itemsList, setItemsList] = useState([]);
@@ -143,13 +83,11 @@ export const GamesContextProvider = (props) => {
   const { isLoading, error, sendRequest: fetchGames } = useFetch();
   const [newFuckingWindow, setNewFuckingWindow] = useState("");
   const [navMobState, setNavMobState] = useState(false);
-  //   let itemsList;
   useEffect(() => {
     console.log("HI!  ");
     const getMain = (data) => {
       const gamesData = getGames(data);
       setItemsList((prev) => [...gamesData]);
-      //   itemsList = [...gamesData];
     };
     fetchGames(
       {
@@ -160,34 +98,6 @@ export const GamesContextProvider = (props) => {
       },
       getMain
     );
-    // const getReleased = (data) => {
-    //   const gamesData = getRecentGames(data);
-    //   console.log(itemsList);
-    //   setItemsList((prev) => [...prev, ...gamesData]);
-    //   //   itemsList = [...gamesData];
-    // };
-    // fetchGames(
-    //   {
-    //     url: "https://api.igdb.com/v4/multiquery",
-    //     method: "POST",
-    //     body: r,
-    //   },
-    //   getReleased
-    // );
-    // const getPlatforms = (data) => {
-    //   const gamesData = getPlatformGames(data);
-    //   console.log(itemsList);
-    //   setItemsList((prev) => [...prev, ...gamesData]);
-    //   //   itemsList = [...gamesData];
-    // };
-    // fetchGames(
-    //   {
-    //     url: "https://api.igdb.com/v4/multiquery",
-    //     method: "POST",
-    //     body: p,
-    //   },
-    //   getPlatforms
-    // );
     console.log(itemsList);
   }, []);
 

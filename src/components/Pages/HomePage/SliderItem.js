@@ -1,10 +1,8 @@
-import classes from "./MainContentItem.module.css";
-import useFetch from "../hooks/useFetch";
-import GameDetails from "./ExternalPages/GameDetails";
-import { useContext, useState, useEffect } from "react";
-import GamesContext from "./store/games-context";
-import ytimg from "../img/ytmissing.png";
-import nocover from "../img/nocover.png";
+import classes from "./SliderItem.module.css";
+import { useContext } from "react";
+import GamesContext from "../../store/games-context";
+import nocover from "../../../img/nocover.png";
+import { NavLink } from "react-router-dom";
 const clienSecret = "9afgt7ltggsgv2f1zsgl1agn31q47e";
 const clientId = "o8hd89dcqn6tvksmnse3kzec2we213";
 const accesToken = "4wczrc1qwbmam0bejpj817cbvve3i7";
@@ -50,7 +48,11 @@ const MainContentItem = (props) => {
       : props.genre[0].name;
 
   return (
-    <div className={classes.itemcontainer} onClick={itemOnClickHandler}>
+    <NavLink
+      to={`/game/${props.title.replaceAll(" ", "")}`}
+      className={classes.itemcontainer}
+      onClick={itemOnClickHandler}
+    >
       <img src={props.cover} />
       <span className={classes.title}>{titleValidation}</span>
       <span className={classes.genre}>{genreValidation}</span>
@@ -58,7 +60,7 @@ const MainContentItem = (props) => {
         <span className={classes.texto}>Puntuacion: </span>
         <span className={classes.numero}>{props.puntuacion}</span>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

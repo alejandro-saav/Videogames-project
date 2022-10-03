@@ -37,7 +37,6 @@ const Pagination = (props) => {
           onClick={() => {
             if (pageIncremental === 1) return;
             setPageIncremental((prev) => prev - (numeration + 1));
-            // props.paginate((prev) => pageIncremental - 10);
           }}
         >
           <a>Prev</a>
@@ -60,7 +59,6 @@ const Pagination = (props) => {
           onClick={() => {
             if (pageIncremental === 21) return;
             setPageIncremental((prev) => prev + (numeration + 1));
-            // props.paginate((prev) => pageIncremental + 10);
           }}
         >
           <a>Next</a>

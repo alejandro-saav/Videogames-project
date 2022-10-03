@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+  gap: 5px;
 }
 
 .maincontainer h3 {

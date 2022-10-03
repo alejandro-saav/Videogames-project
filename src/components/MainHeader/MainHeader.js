@@ -3,22 +3,18 @@ import classes from "./MainHeader.module.css";
 import NavOptions from "./NavOptions";
 import Search from "./Search";
 import SignIn from "./SignIn";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import menuOutline from "../../img/menu-outline.svg";
+import { NavLink } from "react-router-dom";
 import closeOutline from "../../img/close.svg";
 
 const MainHeader = () => {
   const context = useContext(GamesContext);
-  const [navStyles, setNavStyles] = useState(false);
   console.log(context);
-  const clickHandler = () => {
-    context.setNewFuckingWindow(false);
-  };
 
   const menuOnclickHandler = () => {
     context.setNavMobState((prev) => !prev);
   };
-  //* ${classes.nav_open}
   return (
     <nav
       className={`${classes.navigation} ${
@@ -27,9 +23,9 @@ const MainHeader = () => {
     >
       <div className={classes.container}>
         <div className={classes.logocontainer}>
-          <span onClick={clickHandler} className={classes.logo}>
+          <NavLink to="/homepage" className={classes.logo}>
             OACS
-          </span>
+          </NavLink>
           <img
             src={menuOutline}
             className={classes.iconmobilenav}
@@ -53,47 +49,6 @@ const MainHeader = () => {
             <Search />
             <SignIn />
           </ul>
-        </div>
-        {/* <nav className={`${classes.main_nav} ${classes.nav_open}`}>
-          <ul className={classes.main_nav_list}>
-          <li>
-          <a className={classes.main_nav_link} href="#">
-          Games
-          </a>
-          </li>
-          <li>
-              <a className={classes.main_nav_link} href="#">
-              Games Categories
-              </a>
-            </li>
-            <li>
-            <a className={classes.main_nav_link} href="#">
-            Platforms
-            </a>
-            </li>
-            <li>
-              <a className={classes.main_nav_link} href="#">
-                Search
-              </a>
-            </li>
-            <li>
-            <a className={classes.main_nav_link} href="#">
-            Sign In
-            </a>
-            </li>
-            </ul>
-          </nav> */}
-        <div className={classes.btnmobilenav}>
-          {/* <ion-icon
-            className="icon-mobile-nav"
-            name="reorder-three-outline"
-            ></ion-icon>
-          <ion-icon className="icon-mobile-nav" name="close-outline"></ion-icon> */}
-          <img
-            src={closeOutline}
-            className={classes.iconmobilenav}
-            name="close-outline"
-          />
         </div>
       </div>
     </nav>

@@ -1,18 +1,17 @@
-import classes from "./RecentlyPage.module.css";
-import RecentlyPageItem from "./RecentlyPageItem";
+import classes from "./NavPage.module.css";
+import NavPageGamesItem from "./NavPageGamesItem";
 import useFetch from "../../../hooks/useFetch";
 import { useEffect, useState } from "react";
-import Pagination from "../Pagination";
-import FilterPage from "./FilterPage";
+import Pagination from "./Pagination";
+import FilterPage from "./FilterOptions";
+import { NavLink } from "react-router-dom";
 const RecentylPage = (props) => {
-  // console.log(query.recentGames);
   const { isLoading, error, sendRequest: fetchGames } = useFetch();
   const [gamesArray, setGamesArray] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [resetPag, setResetPag] = useState(false);
   const postsPerPage = 16;
   const httpFields = `fields name,genres.name,aggregated_rating,cover.url,involved_companies.company.name,videos.video_id,screenshots.url,first_release_date,summary,platforms.name,similar_games.name,similar_games.cover.url,game_modes.name;`;
-  // const httpConditions = `where name != null & genres.name != null & aggregated_rating != null & cover.url != null & videos.video_id != null;`;
   const gamesNumber = 400;
   const maxPages = gamesNumber / postsPerPage;
   const [filter, setFilter] = useState("");
@@ -36,12 +35,10 @@ const RecentylPage = (props) => {
     );
   }, [bodyStr, props.query]);
 
-  // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentGames = gamesArray.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
@@ -54,17 +51,15 @@ const RecentylPage = (props) => {
         {gamesArray.length > 0 ? (
           currentGames.map((item) => {
             return (
-              <div className={classes.itemcontainer}>
-                <RecentlyPageItem
-                  // name={item.name}
-                  // genre={item.genres[0].name}
-                  // cover={item.cover.url}
-                  // score={item.aggregated_rating}
+              <NavLink
+                to={`/game/${item.name.replaceAll(" ", "")}`}
+                className={classes.itemcontainer}
+              >
+                <NavPageGamesItem
                   name={item.name}
                   genre={item.genres}
                   cover={item.cover.url}
                   score={item.aggregated_rating}
-                  // score={item.aggregated_rating}
                   date={item.first_release_date}
                   company={item.involved_companies}
                   screenshot={item.screenshots}
@@ -76,7 +71,7 @@ const RecentylPage = (props) => {
                   highlighted={props.highlighted}
                   highlightedType={props.highlightedType}
                 />
-              </div>
+              </NavLink>
             );
           })
         ) : (

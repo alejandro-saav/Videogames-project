@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import classes from "./FilterPage.module.css";
+import classes from "./FilterOptions.module.css";
 const FilterPage = (props) => {
   const getSortValue = (e) => {
     console.log(e.target.name);
