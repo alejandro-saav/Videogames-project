@@ -9,7 +9,6 @@ const NavbarItem = (props) => {
   const clickListener = (e) => {
     const value = e.target.innerText.replace(/\s+/g, "").toLowerCase();
     console.log(value);
-    gamesCtx.setNewFuckingWindow(value);
     gamesCtx.setNavMobState((prev) => !prev);
   };
   const navOptions = {

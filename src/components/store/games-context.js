@@ -77,11 +77,8 @@ const getGames = (data) => {
 
 export const GamesContextProvider = (props) => {
   const [itemsList, setItemsList] = useState([]);
-  const [newWindows, setNewWindows] = useState(false);
-  const [newExternalWindow, setNewExternalWindow] = useState(false);
   const [currentGame, setCurrentGame] = useState([]);
   const { isLoading, error, sendRequest: fetchGames } = useFetch();
-  const [newFuckingWindow, setNewFuckingWindow] = useState("");
   const [navMobState, setNavMobState] = useState(false);
   useEffect(() => {
     console.log("HI!  ");
@@ -91,8 +88,8 @@ export const GamesContextProvider = (props) => {
     };
     fetchGames(
       {
-        // url: "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/multiquery",
-        url: "https://api.igdb.com/v4/multiquery",
+        url: "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/multiquery",
+        // url: "https://api.igdb.com/v4/multiquery",
         method: "POST",
         body: bodyHttpStr,
       },
@@ -101,32 +98,14 @@ export const GamesContextProvider = (props) => {
     console.log(itemsList);
   }, []);
 
-  const popUpWindow = () => {
-    setNewWindows((prevState) => !prevState);
-  };
-
-  const popUpExternalWindow = () => {
-    setNewExternalWindow((prevState) => !prevState);
-  };
-
   const setCurrentGames = (game) => {
     setCurrentGame((prev) => [game]);
-  };
-
-  const setSomeBullShite = (window) => {
-    setNewFuckingWindow((prev) => window);
   };
 
   const contextValue = {
     mainGames: itemsList[0],
     recentlyGames: itemsList[1],
     gamesByPlatform: itemsList[2],
-    newWindow: newWindows,
-    setNewWindows: popUpWindow,
-    newExternalWindow,
-    setNewExternalWindow: popUpExternalWindow,
-    newFuckingWindow,
-    setNewFuckingWindow: setSomeBullShite,
     isLoading,
     currentGame,
     setCurrentGames,

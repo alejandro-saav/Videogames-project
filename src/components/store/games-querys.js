@@ -8,8 +8,8 @@ const querys = {
   top100: `${fields} sort total_rating desc; ${nullExcludeStr} & aggregated_rating != null`,
   coopMultiplayer: `${fields} sort hypes desc; ${nullExcludeStr} & hypes != null`,
   shooters: `${fields} sort total_rating desc; ${nullExcludeStr} & aggregated_rating != null & genres.name = "Shooter"`,
-  mmo: `${fields} sort total_rating desc; ${nullExcludeStr} & aggregated_rating != null & genres.name = "Role-playing (RPG)"`,
   platformsGames: `${fields} sort total_rating desc; ${nullExcludeStr} & aggregated_rating != null & genres.name = "Platform"`,
+  mmo: `${fields} sort total_rating desc; ${nullExcludeStr} & aggregated_rating != null & genres.name = "Role-playing (RPG)"`,
   indies: `${fields} sort total_rating desc; ${nullExcludeStr} & aggregated_rating != null & genres.name = "Indie"`,
   ps4: `${fields} sort total_rating desc; ${nullExcludeStr} & aggregated_rating != null & platforms.name = "PlayStation 4"`,
   xbox: `${fields} sort total_rating desc; ${nullExcludeStr} & aggregated_rating != null & platforms.name = "Xbox One"`,
@@ -19,6 +19,3 @@ const querys = {
 };
 
 export default querys;
-// first_release_date != null &
-// 1470960000;
-// 1662424992;

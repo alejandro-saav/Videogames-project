@@ -2,7 +2,6 @@ import { useContext } from "react";
 import GamesContext from "../../store/games-context";
 import classes from "./NavPageGamesItem.module.css";
 import nocover from "../../../img/nocover.png";
-import { NavLink } from "react-router-dom";
 
 const RecentlyPageItem = (props) => {
   const formatedCover = `https:${props.cover.replace("t_thumb", "t_720p")}`;
@@ -21,11 +20,6 @@ const RecentlyPageItem = (props) => {
 
   const screenshotValidate = props.screenshot ? props.screenshot : nocover;
 
-  const getDate = new Date(props.date * 1000);
-  const formatDate = getDate.toLocaleDateString("en-GB");
-
-  // const dateValidate = props.date ? props.date : "--/--/--";
-
   const itemOnClickHandler = (e) => {
     const game = {
       cover: formatedCover,
@@ -42,7 +36,6 @@ const RecentlyPageItem = (props) => {
       game_modes: props.game_modes,
     };
     gamesCtx.setCurrentGames(game);
-    gamesCtx.setNewFuckingWindow("gamedetails");
   };
   return (
     <div className={classes.maincontainer} onClick={itemOnClickHandler}>
@@ -62,5 +55,4 @@ const RecentlyPageItem = (props) => {
     </div>
   );
 };
-//${eval(props.highlighted)}
 export default RecentlyPageItem;

@@ -2,7 +2,6 @@ import GamesContext from "../../store/games-context";
 import classes from "./GameDetails.module.css";
 import { useContext, useEffect } from "react";
 import SummaryContent from "./SummaryContent";
-import nocover from "../../../img/nocover.png";
 
 const GameDetails = () => {
   useEffect(() => {
@@ -76,7 +75,5 @@ const GameDetails = () => {
     </>
   );
 };
-
-//* VALIDAR SEGUNDA SCREENSHOT
 
 export default GameDetails;

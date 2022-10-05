@@ -34,7 +34,6 @@ const MainContentItem = (props) => {
       game_modes: props.game_modes,
     };
     gamesCtx.setCurrentGames(game);
-    gamesCtx.setNewFuckingWindow("gamedetails");
   };
 
   const titleValidation =
@@ -53,13 +52,15 @@ const MainContentItem = (props) => {
       className={classes.itemcontainer}
       onClick={itemOnClickHandler}
     >
-      <img src={props.cover} />
-      <span className={classes.title}>{titleValidation}</span>
-      <span className={classes.genre}>{genreValidation}</span>
-      <div className={classes.puntuacion}>
-        <span className={classes.texto}>Puntuacion: </span>
-        <span className={classes.numero}>{props.puntuacion}</span>
-      </div>
+      <>
+        <img src={props.cover} />
+        <span className={classes.title}>{titleValidation}</span>
+        <span className={classes.genre}>{genreValidation}</span>
+        <div className={classes.puntuacion}>
+          <span className={classes.texto}>Puntuacion: </span>
+          <span className={classes.numero}>{props.puntuacion}</span>
+        </div>
+      </>
     </NavLink>
   );
 };

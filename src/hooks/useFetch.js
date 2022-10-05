@@ -18,7 +18,6 @@ const useFetch = () => {
         headers: requestConfig.headers
           ? requestConfig.headers
           : commonHttpHeaders,
-        // body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
         body: requestConfig.body,
       });
 

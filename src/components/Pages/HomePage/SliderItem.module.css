@@ -1,7 +1,6 @@
 .itemcontainer {
   display: flex;
   flex-direction: column;
-  /* width: 16rem; */
   width: 100%;
   padding: 0;
   margin: 0;
@@ -9,15 +8,12 @@
   border: 5px solid #2f2f2a;
   box-shadow: 0 0 5px #333;
   border-radius: 5px;
-  /* filter: brightness(85%); */
   filter: brightness(100%);
   cursor: grab;
   text-decoration: none;
 }
 
 .itemcontainer:hover {
-  /* filter: brightness(100%); */
-  /* filter: drop-shadow(16px 16px 20px red) invert(75%); */
   transition: 4000ms;
   filter: opacity(85%);
 }
@@ -57,7 +53,6 @@
   border-radius: 5px;
   pointer-events: none;
   z-index: 1;
-  /* animation: Items2 600ms ease-in-out forwards; */
 }
 
 /** Careful */
@@ -80,21 +75,15 @@
 @keyframes Items {
   0% {
     opacity: 0;
-    /* transform: scale(0.3) rotateY(180deg); */
     transform: scale(0.3) rotateX();
-    /* transform: translateX(200%); */
   }
   60% {
     transform: scale(1);
-    /* transform: translateX(50%); */
   }
   90% {
     transform: scale(0.9);
-    /* transform: scale(0.9); */
   }
   100% {
     opacity: 1;
   }
 }
-
-/* <ion-icon name="reorder-three-outline"></ion-icon> */

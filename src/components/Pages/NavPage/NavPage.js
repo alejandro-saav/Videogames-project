@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import FilterPage from "./FilterOptions";
 import { NavLink } from "react-router-dom";
+import LoadingCard from "../HomePage/LoadingCard";
 const RecentylPage = (props) => {
   const { isLoading, error, sendRequest: fetchGames } = useFetch();
   const [gamesArray, setGamesArray] = useState([]);
@@ -26,8 +27,8 @@ const RecentylPage = (props) => {
     };
     fetchGames(
       {
-        // url: `https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/games`,
-        url: `https://api.igdb.com/v4/games`,
+        url: `https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/games`,
+        // url: `https://api.igdb.com/v4/games`,
         method: "POST",
         body: `${props.query + filter}; limit 400;`,
       },
@@ -40,6 +41,7 @@ const RecentylPage = (props) => {
   const currentGames = gamesArray.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const fields = [...Array(16)];
 
   return (
     <>
@@ -48,35 +50,39 @@ const RecentylPage = (props) => {
         <FilterPage filterHandler={setFilter} />
       </div>
       <div className={classes.maincontainer}>
-        {gamesArray.length > 0 ? (
-          currentGames.map((item) => {
-            return (
-              <NavLink
-                to={`/game/${item.name.replaceAll(" ", "")}`}
-                className={classes.itemcontainer}
-              >
-                <NavPageGamesItem
-                  name={item.name}
-                  genre={item.genres}
-                  cover={item.cover.url}
-                  score={item.aggregated_rating}
-                  date={item.first_release_date}
-                  company={item.involved_companies}
-                  screenshot={item.screenshots}
-                  video={item.videos[0].video_id}
-                  summary={item.summary}
-                  platforms={item.platforms}
-                  similar_games={item.similar_games}
-                  game_modes={item.game_modes}
-                  highlighted={props.highlighted}
-                  highlightedType={props.highlightedType}
-                />
-              </NavLink>
-            );
-          })
-        ) : (
-          <div>LOADING...</div>
-        )}
+        {gamesArray.length > 0
+          ? currentGames.map((item) => {
+              return (
+                <NavLink
+                  to={`/game/${item.name.replaceAll(" ", "")}`}
+                  className={classes.itemcontainer}
+                >
+                  <NavPageGamesItem
+                    name={item.name}
+                    genre={item.genres}
+                    cover={item.cover.url}
+                    score={item.aggregated_rating}
+                    date={item.first_release_date}
+                    company={item.involved_companies}
+                    screenshot={item.screenshots}
+                    video={item.videos[0].video_id}
+                    summary={item.summary}
+                    platforms={item.platforms}
+                    similar_games={item.similar_games}
+                    game_modes={item.game_modes}
+                    highlighted={props.highlighted}
+                    highlightedType={props.highlightedType}
+                  />
+                </NavLink>
+              );
+            })
+          : fields.map((item) => {
+              return (
+                <div className={classes.loadingcontainer}>
+                  <LoadingCard />
+                </div>
+              );
+            })}
       </div>
       <>
         <Pagination

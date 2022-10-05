@@ -1,7 +1,5 @@
 .maincontainer {
-  /* height: 16rem; */
   background-color: #222;
-  /* padding: 4rem; */
   border-top: 5px solid #777;
   width: 100%;
 }
@@ -39,10 +37,7 @@
 }
 
 .iconcontainer img {
-  /* border: 2px solid #fff; */
   stroke: #fff;
-  /* width: 50%; */
-  /* height: 50%; */
 }
 
 .buttonscontainer {

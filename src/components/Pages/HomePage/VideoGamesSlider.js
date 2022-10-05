@@ -2,6 +2,7 @@ import classes from "./VideoGamesSlider.module.css";
 import SliderItem from "./SliderItem";
 import { useContext, useState, useEffect } from "react";
 import GamesContext from "../../store/games-context";
+import LoadingCard from "./LoadingCard";
 
 const MainContent = (props) => {
   const gamesCtx = useContext(GamesContext);
@@ -45,53 +46,110 @@ const MainContent = (props) => {
     setNumberOfCards((prev) => prev - cardsRender);
   };
 
+  const fields = [...Array(cardsRender)];
+
   return (
     <>
-      {hasItem && (
-        <div className={classes.slider}>
-          <span
-            className={`${classes.rarrow} ${classes.arrow}`}
-            onClick={clickRightHandler}
-          >
-            &#8250;
-          </span>
-          <span
-            className={`${classes.larrow} ${classes.arrow}`}
-            onClick={clickLeftHandler}
-          >
-            &#8249;
-          </span>
-          <div className={classes.container}>
-            {props.games.map((item, index) => {
-              if (
-                index < numberOfCards + cardsRender &&
-                index >= numberOfCards
-              ) {
+      <div className={classes.slider}>
+        <span
+          className={`${classes.rarrow} ${classes.arrow}`}
+          onClick={clickRightHandler}
+        >
+          &#8250;
+        </span>
+        <span
+          className={`${classes.larrow} ${classes.arrow}`}
+          onClick={clickLeftHandler}
+        >
+          &#8249;
+        </span>
+        <div className={classes.container}>
+          {hasItem
+            ? props.games.map((item, index) => {
+                if (
+                  index < numberOfCards + cardsRender &&
+                  index >= numberOfCards
+                ) {
+                  return (
+                    <div className={classes.item} key={index}>
+                      <SliderItem
+                        title={item.name}
+                        genre={item.genre}
+                        cover={item.cover.replace("t_thumb", "t_720p")}
+                        puntuacion={
+                          item.review ? item.review?.toFixed(0) : "N/A"
+                        }
+                        date={item.date}
+                        company={item.company}
+                        screenshot={item.screenshot}
+                        video={item.video}
+                        summary={item.summary}
+                        platforms={item.platforms}
+                        similar_games={item.similar_games}
+                        game_modes={item.game_modes}
+                      />
+                    </div>
+                  );
+                }
+              })
+            : fields.map((item) => {
                 return (
-                  <div className={classes.item} key={index}>
-                    <SliderItem
-                      title={item.name}
-                      genre={item.genre}
-                      cover={item.cover.replace("t_thumb", "t_720p")}
-                      puntuacion={item.review ? item.review?.toFixed(0) : "N/A"}
-                      date={item.date}
-                      company={item.company}
-                      screenshot={item.screenshot}
-                      video={item.video}
-                      summary={item.summary}
-                      platforms={item.platforms}
-                      similar_games={item.similar_games}
-                      game_modes={item.game_modes}
-                    />
+                  <div className={classes.item}>
+                    <LoadingCard />
                   </div>
                 );
-              }
-            })}
-          </div>
+              })}
         </div>
-      )}
+      </div>
     </>
   );
+  // return (
+  //   <>
+  //     {hasItem && (
+  //       <div className={classes.slider}>
+  //         <span
+  //           className={`${classes.rarrow} ${classes.arrow}`}
+  //           onClick={clickRightHandler}
+  //         >
+  //           &#8250;
+  //         </span>
+  //         <span
+  //           className={`${classes.larrow} ${classes.arrow}`}
+  //           onClick={clickLeftHandler}
+  //         >
+  //           &#8249;
+  //         </span>
+  //         <div className={classes.container}>
+  //           {props.games.map((item, index) => {
+  //             if (
+  //               index < numberOfCards + cardsRender &&
+  //               index >= numberOfCards
+  //             ) {
+  //               return (
+  //                 <div className={classes.item} key={index}>
+  //                   <SliderItem
+  //                     title={item.name}
+  //                     genre={item.genre}
+  //                     cover={item.cover.replace("t_thumb", "t_720p")}
+  //                     puntuacion={item.review ? item.review?.toFixed(0) : "N/A"}
+  //                     date={item.date}
+  //                     company={item.company}
+  //                     screenshot={item.screenshot}
+  //                     video={item.video}
+  //                     summary={item.summary}
+  //                     platforms={item.platforms}
+  //                     similar_games={item.similar_games}
+  //                     game_modes={item.game_modes}
+  //                   />
+  //                 </div>
+  //               );
+  //             }
+  //           })}
+  //         </div>
+  //       </div>
+  //     )}
+  //   </>
+  // );
 };
 
 export default MainContent;

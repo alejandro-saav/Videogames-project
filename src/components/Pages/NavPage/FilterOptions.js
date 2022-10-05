@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import classes from "./FilterOptions.module.css";
 const FilterPage = (props) => {
   const getSortValue = (e) => {
-    console.log(e.target.name);
     props.filterHandler(`& ${e.target.name}.name = "${e.target.value}"`);
   };
   useEffect(() => {

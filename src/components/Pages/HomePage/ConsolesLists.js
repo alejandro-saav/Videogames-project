@@ -2,6 +2,7 @@ import ListsItem from "./ListsItem";
 import classes from "./ConsolesLists.module.css";
 import GamesContext from "../../store/games-context";
 import { useState, useContext } from "react";
+import LoadingCard from "./LoadingCard";
 
 const SecondContent = () => {
   const [currentColumn, setCurrentColumn] = useState(1);
@@ -41,61 +42,74 @@ const SecondContent = () => {
       );
     });
   };
+  const fields = [...Array(1)];
   const gamesCtx = useContext(GamesContext);
   const hasItem = gamesCtx.gamesByPlatform ? true : false;
   return (
     <>
-      {hasItem ? (
-        <div className={classes.maincontainer}>
-          <span
-            className={`${classes.rarrow} ${classes.arrow}`}
-            onClick={clickRightHandler}
-          >
-            &#8250;
-          </span>
-          <span
-            className={`${classes.larrow} ${classes.arrow}`}
-            id={currentColumn}
-            onClick={clickLeftHandler}
-          >
-            &#8249;
-          </span>
-          <div
-            className={`${classes.first_column} ${
-              currentColumn === 1 ? classes.active : ""
-            }`}
-          >
-            <h3>PS4</h3>
-            {renderItem(gamesCtx.gamesByPlatform[0].ps4)}
-          </div>
-          <div
-            className={`${classes.second_column} ${
-              currentColumn === 2 ? classes.active : ""
-            }`}
-          >
-            <h3>XBOX</h3>
-            {renderItem(gamesCtx.gamesByPlatform[1].xbox)}
-          </div>
-          <div
-            className={`${classes.third_column} ${
-              currentColumn === 3 ? classes.active : ""
-            }`}
-          >
-            <h3>PC</h3>
-            {renderItem(gamesCtx.gamesByPlatform[2].pc)}
-          </div>
-          <div
-            className={`${classes.fourth_column} ${
-              currentColumn === 4 ? classes.active : ""
-            }`}
-          >
-            <h3>NINTENDO SWITCH</h3>
-            {renderItem(gamesCtx.gamesByPlatform[3].switch)}
-          </div>
+      <div className={classes.maincontainer}>
+        <span
+          className={`${classes.rarrow} ${classes.arrow}`}
+          onClick={clickRightHandler}
+        >
+          &#8250;
+        </span>
+        <span
+          className={`${classes.larrow} ${classes.arrow}`}
+          id={currentColumn}
+          onClick={clickLeftHandler}
+        >
+          &#8249;
+        </span>
+        <div
+          className={`${classes.first_column} ${
+            currentColumn === 1 ? classes.active : ""
+          }`}
+        >
+          <h3>PS4</h3>
+          {hasItem
+            ? renderItem(gamesCtx.gamesByPlatform[0].ps4)
+            : fields.map((item) => {
+                return <LoadingCard />;
+              })}
         </div>
-      ) : (
-        <div>CARGANDO</div>
-      )}
+        <div
+          className={`${classes.second_column} ${
+            currentColumn === 2 ? classes.active : ""
+          }`}
+        >
+          <h3>XBOX</h3>
+          {hasItem
+            ? renderItem(gamesCtx.gamesByPlatform[0].ps4)
+            : fields.map((item) => {
+                return <LoadingCard />;
+              })}
+        </div>
+        <div
+          className={`${classes.third_column} ${
+            currentColumn === 3 ? classes.active : ""
+          }`}
+        >
+          <h3>PC</h3>
+          {hasItem
+            ? renderItem(gamesCtx.gamesByPlatform[0].ps4)
+            : fields.map((item) => {
+                return <LoadingCard />;
+              })}
+        </div>
+        <div
+          className={`${classes.fourth_column} ${
+            currentColumn === 4 ? classes.active : ""
+          }`}
+        >
+          <h3>NINTENDO SWITCH</h3>
+          {hasItem
+            ? renderItem(gamesCtx.gamesByPlatform[0].ps4)
+            : fields.map((item) => {
+                return <LoadingCard />;
+              })}
+        </div>
+      </div>
     </>
   );
 };

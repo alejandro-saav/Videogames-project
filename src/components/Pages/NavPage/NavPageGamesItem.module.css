@@ -5,10 +5,6 @@
 
 .cover {
   filter: brightness(95%);
-  /* filter: brightness(100%); */
-}
-
-.cover:hover {
 }
 
 .details {

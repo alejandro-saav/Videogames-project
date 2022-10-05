@@ -36,9 +36,7 @@ const ConsoleReleasedItem = (props) => {
       similar_games: props.similar_games,
       game_modes: props.game_modes,
     };
-    console.log(game);
     gamesCtx.setCurrentGames(game);
-    gamesCtx.setNewFuckingWindow("gamedetails");
   };
   return (
     <NavLink

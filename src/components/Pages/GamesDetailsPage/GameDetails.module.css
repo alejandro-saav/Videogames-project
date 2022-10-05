@@ -3,19 +3,14 @@
   display: flex;
   justify-content: space-around;
   margin-top: 0.2rem;
-  /* margin-top: 2rem; */
-  /* background-color: #41b3a3; */
   background: linear-gradient(#41b3a3, #41b3a3);
   border-top: 2px solid #41b3a3;
   border-bottom: 2px solid #41b3a3;
   margin-bottom: 0;
-  /* height: 4rem; */
-  /* height: 50%; */
 }
 
 .title {
   font-size: 1.8rem;
-  /* margin-left: 2rem; */
   font-weight: bold;
   align-self: center;
 }
@@ -23,19 +18,14 @@
 .details {
   font-weight: bold;
   display: flex;
-  /* gap: 15px; */
-  /* padding-right: 20px; */
-  /* border: 2px solid #41b3a3; */
   justify-content: center;
   align-items: center;
 }
 
 .details div {
-  /* padding-top: 3px; */
   padding: 3px 0.5rem;
   display: flex;
   flex-direction: column;
-  /* width: 8rem; */
   text-align: center;
 }
 
@@ -63,7 +53,6 @@
 
 .developers {
   border-right: 2px solid #41b3a3;
-  /* padding-top: 3px !important; */
   align-self: center;
 }
 
@@ -78,7 +67,6 @@
 }
 
 .contentcontainer {
-  /* background-color: red; */
   margin: 0 4rem;
   display: grid;
   grid-template-columns: 0.8fr repeat(2, 1fr) 0.8fr;
@@ -89,23 +77,18 @@
   border: solid #eee;
 }
 .covercontainer {
-  /* background-color: #ff2; */
   grid-area: 1 / 1 / 3 / 2;
   border-right: solid #eee;
-  /* height: 100%; */
 }
 
 .covercontainer img {
   height: 100%;
   width: 100%;
-  /* border-right: solid #eee; */
 }
 .videocontainer {
   background-color: #fff;
   grid-area: 1 / 2 / 3 / 4;
   border-right: solid #eee;
-  /* height: 100%; */
-  /* border: solid #eee; */
 }
 
 .videocontainer iframe {
@@ -116,7 +99,6 @@
   grid-area: 1 / 4 / 2 / 5;
   border-bottom: solid #eee;
   height: 13rem;
-  /* border: solid #666; */
 }
 
 .thirdcontainer img {
@@ -124,8 +106,6 @@
   width: 100%;
 }
 .fourthcontainer {
-  /* border: solid #666; */
-  /* height: 50%; */
   height: 13rem;
   background-color: red;
   grid-area: 2 / 4 / 3 / 5;
@@ -136,12 +116,7 @@
   width: 100%;
 }
 
-@media (max-width: 480px) {
-  .details {
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 720px) {
   .container {
     flex-direction: column;
     align-items: flex-start;
@@ -159,11 +134,6 @@
   }
 
   .details {
-    /* font-size: 0.2rem; */
-    /* align-content: flex-end; */
-    /* height: 2rem; */
-    /* flex-direction: column; */
-    /* height: 4rem; */
     width: 100%;
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
@@ -171,9 +141,6 @@
   }
 
   .details div {
-    /* align-self: flex-start;
-    flex-direction: row;
-    justify-content: flex-start; */
     padding: 0;
     padding-left: 0.4rem;
   }
