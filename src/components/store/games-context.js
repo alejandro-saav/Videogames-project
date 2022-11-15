@@ -83,13 +83,15 @@ export const GamesContextProvider = (props) => {
   useEffect(() => {
     console.log("HI!  ");
     const getMain = (data) => {
+      console.log(data);
       const gamesData = getGames(data);
       setItemsList((prev) => [...gamesData]);
     };
     fetchGames(
       {
-        url: "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/multiquery",
-        // url: "https://api.igdb.com/v4/multiquery",
+        // url: "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/multiquery",
+        url: "https://api.igdb.com/v4/multiquery",
+        // url: "https://id.twitch.tv/oauth2/token?client_id=o8hd89dcqn6tvksmnse3kzec2we213&client_secret=dfezzmfofm10hi45zurquqrcig8m39&grant_type=client_credentials",
         method: "POST",
         body: bodyHttpStr,
       },

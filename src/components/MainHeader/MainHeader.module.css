@@ -9,13 +9,14 @@
   align-items: center;
   /* border: 4px solid rgb(240, 1, 1); */
   /* border: 4px solid rgb(204, 7, 7); */
-  /* box-shadow: 0 0 30px #c92a2a; */
-  color: #eee;
+  color: #28282b;
   /* border-radius: 10px; */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 800;
+  box-shadow: 0 0 10px #666666;
   /* background-color: #fa5252; */
-  background-color: rgb(240, 1, 50);
+  /* background-color: rgb(240, 1, 50); */
+  background-color: #ffffff;
   width: 100%;
   overflow: hidden;
 }
@@ -36,7 +37,7 @@
 .logo {
   margin-left: 2.4rem;
   border: 3px solid rgb(76, 0, 255);
-  color: #eee;
+  color: #28282b;
   border-radius: 15px;
   padding: 0.2rem 0.4rem;
   text-decoration: none;

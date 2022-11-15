@@ -13,9 +13,11 @@
   height: 160px;
   width: 160px;
   position: absolute;
-  background-color: rgb(240, 1, 50);
+  /* background-color: rgb(240, 1, 50); */
+  background-color: #ffffff;
   border-radius: 5px;
-  border: 4px solid rgb(155, 0, 0);
+  /* border: 4px solid rgb(155, 0, 0); */
+  border: 2px solid #333;
   border-top-style: none;
   z-index: 500;
 }
@@ -27,7 +29,8 @@
 }
 
 .list li:hover {
-  background-color: rgb(240, 100, 150);
+  /* background-color: rgb(240, 100, 150); */
+  background-color: #dddddd;
   border-radius: 5px;
 }
 

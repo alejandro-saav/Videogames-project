@@ -43,17 +43,21 @@
   position: absolute;
   z-index: 2;
   font-size: 4rem;
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  background-color: #ffffff;
+  border: 1px solid #2d2d2d;
   padding: 0 0.2rem 0.4rem 0.2rem;
   cursor: pointer;
-  color: rgb(255, 59, 59);
+  /* color: rgb(255, 59, 59); */
+  color: #2d2d2d;
   box-shadow: 0 0 5px #666;
 }
 
 .arrow:hover {
-  transition: 500ms;
-  background-color: rgba(0, 0, 0, 0.6);
-  outline: 1px solid #666;
+  transition: 300ms;
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  background-color: #dddddd;
+  outline: 1px solid #111;
 }
 
 .rarrow {
