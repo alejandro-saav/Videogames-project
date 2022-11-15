@@ -1,5 +1,6 @@
 .maincontainer {
-  padding: 5px;
+  /* padding: 5px; */
+  padding-bottom: 0;
   height: 20rem;
 }
 
@@ -14,6 +15,8 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   padding: 0.4rem;
+  padding-top: 0;
+  background-color: #ffffff;
 }
 
 .title {
@@ -30,6 +33,7 @@
   grid-area: 2 / 2 / 3 / 3;
   justify-self: center;
   font-size: 1.2rem;
+  color: #00fa9a;
   font-weight: bold;
-  color: #ff2;
+  /* color: #ff2; */
 }

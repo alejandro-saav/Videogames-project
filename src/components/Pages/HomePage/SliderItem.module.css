@@ -5,7 +5,7 @@
   padding: 0;
   margin: 0;
   background-color: #2f2f2a;
-  border: 5px solid #2f2f2a;
+  /* border: 5px solid #2f2f2a; */
   box-shadow: 0 0 5px #333;
   border-radius: 5px;
   filter: brightness(100%);
@@ -22,18 +22,22 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: -1px;
   font-size: 1.4rem;
-  color: #fdd73d;
+  /* color: #fdd73d; */
+  color: #00fa9a;
   text-shadow: 0 0 1px red, 0 0 1px black;
+  padding: 5px;
 }
 
 .puntuacion {
   display: flex;
   color: #ddd;
   justify-content: space-between;
+  padding-left: 5px;
 }
 
 .genre {
   color: #ddd;
+  padding-left: 5px;
 }
 
 .texto {
@@ -43,8 +47,10 @@
 .numero {
   font-size: 1.5rem;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: #ffcf10;
-  text-shadow: 0 0 5px #ffd52e;
+  /* color: #ffcf10; */
+  color: #00fa9a;
+  text-shadow: 0 0 5px #00fa9a;
+  padding-right: 5px;
 }
 
 .itemcontainer img {
@@ -58,7 +64,7 @@
 /** Careful */
 .itemcontainer {
   opacity: 1;
-  animation: Items 600ms ease-in-out forwards;
+  animation: Items 300ms ease-in forwards;
 }
 
 @keyframes Items2 {
@@ -75,13 +81,15 @@
 @keyframes Items {
   0% {
     opacity: 0;
-    transform: scale(0.3) rotateX();
+    /* transform: scale(0.3) rotateX(); */
   }
   60% {
-    transform: scale(1);
+    opacity: 0.6;
+    /* transform: scale(1); */
   }
   90% {
-    transform: scale(0.9);
+    opacity: 0.9;
+    /* transform: scale(0.9); */
   }
   100% {
     opacity: 1;

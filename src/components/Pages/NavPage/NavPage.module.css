@@ -6,16 +6,17 @@
   grid-row-gap: 15px;
   margin: 0 6rem;
   padding: 2rem;
+  /* padding-bottom: 0; */
   margin-top: 1rem;
-  background-color: #593ebb81;
+  /* background-color: #593ebb81; */
   border-radius: 5px;
-  box-shadow: 0 0 5px #666;
+  /* box-shadow: 0 0 5px #666; */
 }
 
 .itemcontainer {
   height: 24rem;
   background-color: #fff;
-  box-shadow: 0 0 5px #666;
+  /* box-shadow: 0 0 5px #666; */
   color: #333;
   cursor: pointer;
   border-radius: 5px;
@@ -24,8 +25,9 @@
 }
 
 .itemcontainer:hover {
-  background-color: rgba(255, 0, 0, 0.616);
-  filter: brightness(100%);
+  /* background-color: rgba(255, 0, 0, 0.616); */
+  /* background-color: #333; */
+  filter: brightness(115%);
   transition: all 175ms ease-in-out;
 }
 
@@ -39,7 +41,7 @@
 }
 
 .loadingcontainer {
-  height: 20rem;
+  height: 20ñrem;
   background-color: #ddd;
   box-shadow: 0 0 5px #666;
   color: #333;
