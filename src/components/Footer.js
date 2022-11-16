@@ -2,6 +2,7 @@ import classes from "./Footer.module.css";
 import facebookicon from "../img/facebook.svg";
 import twittericon from "../img/twitter.svg";
 import linkedinicon from "../img/linkedin.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,26 +17,43 @@ const Footer = () => {
           are from there.
         </p>
         <div className={classes.iconcontainer}>
-          <img src={linkedinicon} width="40px" height="40px" />
-          <img src={facebookicon} width="40px" height="40px" />
-          <img src={twittericon} width="40px" height="40px" />
+          <a
+            href="https://www.linkedin.com/in/oscar-castro-a27576252/"
+            target="_blank"
+          >
+            <img src={linkedinicon} width="40px" height="40px" />
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <img src={facebookicon} width="40px" height="40px" />
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <img src={twittericon} width="40px" height="40px" />
+          </a>
         </div>
-        <div className={classes.buttonscontainer}>
+        {/* <div className={classes.buttonscontainer}>
           <ul>
             <li>
-              <a>Home</a>
+              <NavLink to="/homepage" className={classes.link}>
+                Home
+              </NavLink>
             </li>
             <li>
-              <a>About</a>
+              <NavLink to="/homepage" className={classes.link}>
+                About
+              </NavLink>
             </li>
             <li>
-              <a>Contact</a>
+              <NavLink to="/homepage" className={classes.link}>
+                Contact
+              </NavLink>
             </li>
             <li>
-              <a>Blog</a>
+              <NavLink to="/homepage" className={classes.link}>
+                Blog
+              </NavLink>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div className={classes.author}>Design by Oscar Castro</div>
     </div>

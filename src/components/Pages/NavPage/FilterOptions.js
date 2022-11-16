@@ -5,7 +5,7 @@ const FilterPage = (props) => {
     props.filterHandler(`& ${e.target.name}.name = "${e.target.value}"`);
   };
   useEffect(() => {
-    console.log("YO");
+    // console.log("YO");
   }, [props.resetPag]);
   return (
     <div className={classes.maincontainer}>
@@ -14,8 +14,9 @@ const FilterPage = (props) => {
         name="platforms"
         className={classes.platforms}
         onChange={getSortValue}
+        defaultValue="default"
       >
-        <option value="default" selected disabled>
+        <option value="default" disabled>
           --Platforms--
         </option>
         <option value="PlayStation 4">PS4</option>
@@ -24,8 +25,13 @@ const FilterPage = (props) => {
         <option value="PC (Microsoft Windows)">PC</option>
       </select>
       <div className={classes.genretitle}>Filter by genre</div>
-      <select name="genres" className={classes.genres} onChange={getSortValue}>
-        <option value="default" selected disabled>
+      <select
+        name="genres"
+        className={classes.genres}
+        onChange={getSortValue}
+        defaultValue="default"
+      >
+        <option value="default" disabled>
           --Genres--
         </option>
         <option value="Shooter">Shooter</option>

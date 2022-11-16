@@ -5,8 +5,8 @@ import nocover from "../../../img/nocover.png";
 const SummaryContent = () => {
   const gamesCtx = useContext(GamesContext);
   const hasGameModes = gamesCtx.currentGame[0].game_modes ? (
-    gamesCtx.currentGame[0].game_modes.map((item) => {
-      return <a>{item.name}</a>;
+    gamesCtx.currentGame[0].game_modes.map((item, index) => {
+      return <a key={index}>{item.name}</a>;
     })
   ) : (
     <span>No games modes found :(</span>
@@ -14,13 +14,13 @@ const SummaryContent = () => {
 
   const hasSimilarGames = gamesCtx.currentGame[0].similar_games ? (
     gamesCtx.currentGame[0].similar_games.map((item, index) => {
-      console.log(item);
+      // console.log(item);
       const hasCover = item.hasOwnProperty("cover")
         ? `https:${item.cover.url.replace("t_thumb", "t_720p")}`
         : nocover;
       if (index < 5) {
         return (
-          <div className={classes.relateditem}>
+          <div className={classes.relateditem} key={index}>
             <img className={classes.cover} src={hasCover} />
             <span>{`${item.name}`}</span>
           </div>
@@ -32,12 +32,12 @@ const SummaryContent = () => {
   );
   return (
     <div className={classes.container}>
-      <div className={classes.maincontainer}>
+      <div className={classes.maincontainer} key={Math.random()}>
         <div className={classes.genres}>
           <span>Genres: </span>
           {gamesCtx.currentGame[0].genre.map((item, index) => {
             return (
-              <a key={index} href="#" className={classes.genreslinks}>
+              <a href="#" className={classes.genreslinks}>
                 <span>{item.name}</span>
               </a>
             );

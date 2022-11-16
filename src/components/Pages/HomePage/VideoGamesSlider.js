@@ -92,9 +92,9 @@ const MainContent = (props) => {
                   );
                 }
               })
-            : fields.map((item) => {
+            : fields.map((item, index) => {
                 return (
-                  <div className={classes.item}>
+                  <div className={classes.item} key={index}>
                     <LoadingCard />
                   </div>
                 );
@@ -103,53 +103,6 @@ const MainContent = (props) => {
       </div>
     </>
   );
-  // return (
-  //   <>
-  //     {hasItem && (
-  //       <div className={classes.slider}>
-  //         <span
-  //           className={`${classes.rarrow} ${classes.arrow}`}
-  //           onClick={clickRightHandler}
-  //         >
-  //           &#8250;
-  //         </span>
-  //         <span
-  //           className={`${classes.larrow} ${classes.arrow}`}
-  //           onClick={clickLeftHandler}
-  //         >
-  //           &#8249;
-  //         </span>
-  //         <div className={classes.container}>
-  //           {props.games.map((item, index) => {
-  //             if (
-  //               index < numberOfCards + cardsRender &&
-  //               index >= numberOfCards
-  //             ) {
-  //               return (
-  //                 <div className={classes.item} key={index}>
-  //                   <SliderItem
-  //                     title={item.name}
-  //                     genre={item.genre}
-  //                     cover={item.cover.replace("t_thumb", "t_720p")}
-  //                     puntuacion={item.review ? item.review?.toFixed(0) : "N/A"}
-  //                     date={item.date}
-  //                     company={item.company}
-  //                     screenshot={item.screenshot}
-  //                     video={item.video}
-  //                     summary={item.summary}
-  //                     platforms={item.platforms}
-  //                     similar_games={item.similar_games}
-  //                     game_modes={item.game_modes}
-  //                   />
-  //                 </div>
-  //               );
-  //             }
-  //           })}
-  //         </div>
-  //       </div>
-  //     )}
-  //   </>
-  // );
 };
 
 export default MainContent;

@@ -34,11 +34,8 @@
   cursor: pointer;
 }
 
-.search button:active {
-}
-
 @media (max-width: 480px) {
-  .search {
-    /* display: none; */
+  .search input {
+    width: 12rem;
   }
 }

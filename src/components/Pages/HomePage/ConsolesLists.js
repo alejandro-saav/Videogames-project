@@ -69,8 +69,8 @@ const SecondContent = () => {
           <h3>PS4</h3>
           {hasItem
             ? renderItem(gamesCtx.gamesByPlatform[0].ps4)
-            : fields.map((item) => {
-                return <LoadingCard />;
+            : fields.map((item, index) => {
+                return <LoadingCard key={index} />;
               })}
         </div>
         <div
@@ -81,8 +81,8 @@ const SecondContent = () => {
           <h3>XBOX</h3>
           {hasItem
             ? renderItem(gamesCtx.gamesByPlatform[1].xbox)
-            : fields.map((item) => {
-                return <LoadingCard />;
+            : fields.map((item, index) => {
+                return <LoadingCard key={index} />;
               })}
         </div>
         <div
@@ -93,8 +93,8 @@ const SecondContent = () => {
           <h3>PC</h3>
           {hasItem
             ? renderItem(gamesCtx.gamesByPlatform[2].pc)
-            : fields.map((item) => {
-                return <LoadingCard />;
+            : fields.map((item, index) => {
+                return <LoadingCard key={index} />;
               })}
         </div>
         <div
@@ -105,8 +105,8 @@ const SecondContent = () => {
           <h3>NINTENDO SWITCH</h3>
           {hasItem
             ? renderItem(gamesCtx.gamesByPlatform[3].switch)
-            : fields.map((item) => {
-                return <LoadingCard />;
+            : fields.map((item, index) => {
+                return <LoadingCard key={index} />;
               })}
         </div>
       </div>

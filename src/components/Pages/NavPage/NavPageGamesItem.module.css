@@ -37,3 +37,13 @@
   font-weight: bold;
   /* color: #ff2; */
 }
+
+@media (max-width: 480px) {
+  .maincontainer {
+    /* height: auto; */
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+}

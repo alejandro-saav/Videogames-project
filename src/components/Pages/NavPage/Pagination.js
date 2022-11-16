@@ -41,7 +41,7 @@ const Pagination = (props) => {
         >
           <a>Prev</a>
         </li>
-        {pageNumbers.map((item) => {
+        {pageNumbers.map((item, index) => {
           if (item >= props.maxPages) return;
           return (
             <li
@@ -50,6 +50,7 @@ const Pagination = (props) => {
                 props.paginate(item);
               }}
               className={props.current === item ? classes.active : ""}
+              key={index}
             >
               <a>{item}</a>
             </li>

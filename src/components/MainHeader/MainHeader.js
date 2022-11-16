@@ -10,7 +10,7 @@ import closeOutline from "../../img/close.svg";
 
 const MainHeader = () => {
   const context = useContext(GamesContext);
-  console.log(context);
+  // console.log(context);
 
   const menuOnclickHandler = () => {
     context.setNavMobState((prev) => !prev);

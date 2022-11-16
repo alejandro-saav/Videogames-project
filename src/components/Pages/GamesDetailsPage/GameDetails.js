@@ -25,7 +25,8 @@ const GameDetails = () => {
           "t_720p"
         )}`
       : formatedScreenshot;
-  console.log(formatedScreenshotTwo);
+  // console.log(formatedScreenshotTwo);
+  // console.log(Math.random());
   return (
     <>
       <div className={classes.container}>

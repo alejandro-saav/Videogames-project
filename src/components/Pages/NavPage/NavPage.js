@@ -23,7 +23,7 @@ const RecentylPage = (props) => {
     setCurrentPage(1);
     const getData = (data) => {
       setGamesArray((prev) => [...data]);
-      console.log(data);
+      // console.log(data);
     };
     fetchGames(
       {
@@ -51,11 +51,12 @@ const RecentylPage = (props) => {
       </div>
       <div className={classes.maincontainer}>
         {gamesArray.length > 0
-          ? currentGames.map((item) => {
+          ? currentGames.map((item, index) => {
               return (
                 <NavLink
                   to={`/game/${item.name.replaceAll(" ", "")}`}
                   className={classes.itemcontainer}
+                  key={index}
                 >
                   <NavPageGamesItem
                     name={item.name}
@@ -72,13 +73,14 @@ const RecentylPage = (props) => {
                     game_modes={item.game_modes}
                     highlighted={props.highlighted}
                     highlightedType={props.highlightedType}
+                    key={index}
                   />
                 </NavLink>
               );
             })
-          : fields.map((item) => {
+          : fields.map((item, index) => {
               return (
-                <div className={classes.loadingcontainer}>
+                <div className={classes.loadingcontainer} key={index}>
                   <LoadingCard />
                 </div>
               );

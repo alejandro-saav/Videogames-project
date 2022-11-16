@@ -32,7 +32,7 @@ const getGames = (data) => {
   const mainGamesList = [];
   const recentList = [];
   const platformList = [];
-  console.log(data);
+  // console.log(data);
   for (const item of data[0].result) {
     mainGamesList.push({
       name: item.name,
@@ -81,9 +81,9 @@ export const GamesContextProvider = (props) => {
   const { isLoading, error, sendRequest: fetchGames } = useFetch();
   const [navMobState, setNavMobState] = useState(false);
   useEffect(() => {
-    console.log("HI!  ");
+    // console.log("HI!  ");
     const getMain = (data) => {
-      console.log(data);
+      // console.log(data);
       const gamesData = getGames(data);
       setItemsList((prev) => [...gamesData]);
     };
@@ -97,7 +97,7 @@ export const GamesContextProvider = (props) => {
       },
       getMain
     );
-    console.log(itemsList);
+    // console.log(itemsList);
   }, []);
 
   const setCurrentGames = (game) => {

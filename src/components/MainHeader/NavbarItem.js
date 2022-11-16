@@ -21,9 +21,9 @@ const NavbarItem = (props) => {
       case "Games":
         return (
           <ul className={`${classes.list} ${classes.firstlist}`}>
-            {navOptions.games.map((item) => {
+            {navOptions.games.map((item, index) => {
               return (
-                <li onClick={clickListener}>
+                <li onClick={clickListener} key={index}>
                   <NavLink
                     to={`/category/${item.replaceAll(" ", "")}`}
                     className={classes.link}
@@ -39,9 +39,9 @@ const NavbarItem = (props) => {
       case "Game Categories":
         return (
           <ul className={`${classes.list} ${classes.secondlist}`}>
-            {navOptions.gameCategories.map((item) => {
+            {navOptions.gameCategories.map((item, index) => {
               return (
-                <li onClick={clickListener}>
+                <li onClick={clickListener} key={index}>
                   <NavLink
                     to={`/category/${item.replaceAll(" ", "")}`}
                     className={classes.link}
@@ -57,9 +57,9 @@ const NavbarItem = (props) => {
       case "Platforms":
         return (
           <ul className={`${classes.list} ${classes.lastlist}`}>
-            {navOptions.platforms.map((item) => {
+            {navOptions.platforms.map((item, index) => {
               return (
-                <li onClick={clickListener}>
+                <li onClick={clickListener} key={index}>
                   <NavLink
                     to={`/category/${item.replaceAll(" ", "")}`}
                     className={classes.link}

@@ -219,6 +219,7 @@
 
   .search {
     order: -1;
+    /* width: 120%; */
   }
 
   .search ul {

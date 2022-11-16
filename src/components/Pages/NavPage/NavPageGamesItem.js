@@ -20,6 +20,9 @@ const RecentlyPageItem = (props) => {
 
   const screenshotValidate = props.screenshot ? props.screenshot : nocover;
 
+  const getDate = new Date(props.date * 1000);
+  const formatDate = getDate.toLocaleDateString("en-GB");
+
   const itemOnClickHandler = (e) => {
     const game = {
       cover: formatedCover,

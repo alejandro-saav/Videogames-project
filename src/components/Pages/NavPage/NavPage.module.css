@@ -16,10 +16,10 @@
 .itemcontainer {
   height: 24rem;
   background-color: #fff;
-  /* box-shadow: 0 0 5px #666; */
+  box-shadow: 0 0 5px #666;
   color: #333;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 15px;
   width: 90%;
   text-decoration: none;
 }
@@ -66,10 +66,8 @@
 }
 @media (max-width: 480px) {
   .maincontainer {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 0.8rem;
-    column-gap: 1px;
-    padding: 0.7rem;
+    margin: 0;
+    column-gap: 5px;
   }
 
   .itemcontainer {
