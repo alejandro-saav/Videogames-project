@@ -3,7 +3,7 @@ import searchicon from "../../img/search.svg";
 
 const Search = () => {
   const searchChangeHandler = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   return (

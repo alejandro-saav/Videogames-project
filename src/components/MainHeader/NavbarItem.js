@@ -8,7 +8,7 @@ const NavbarItem = (props) => {
   const gamesCtx = useContext(GamesContext);
   const clickListener = (e) => {
     const value = e.target.innerText.replace(/\s+/g, "").toLowerCase();
-    console.log(value);
+    // console.log(value);
     gamesCtx.setNavMobState((prev) => !prev);
   };
   const navOptions = {

@@ -32,12 +32,12 @@ const SummaryContent = () => {
   );
   return (
     <div className={classes.container}>
-      <div className={classes.maincontainer} key={Math.random()}>
+      <div className={classes.maincontainer}>
         <div className={classes.genres}>
           <span>Genres: </span>
           {gamesCtx.currentGame[0].genre.map((item, index) => {
             return (
-              <a href="#" className={classes.genreslinks}>
+              <a href="#" className={classes.genreslinks} key={index}>
                 <span>{item.name}</span>
               </a>
             );
