@@ -2,11 +2,9 @@ import GamesContext from "../../store/games-context";
 import classes from "./GameDetails.module.css";
 import { useContext, useEffect } from "react";
 import SummaryContent from "./SummaryContent";
-import useFetch from "../../../hooks/useFetch";
 
 const GameDetails = () => {
   const gamesCtx = useContext(GamesContext);
-  const { isLoading, error, sendRequest: fetchGames } = useFetch();
   useEffect(() => {
     window.scrollTo(0, 0);
     if (gamesCtx.currentGame.length === 0) {

@@ -35,8 +35,6 @@ const MainContentItem = (props) => {
     };
     gamesCtx.setCurrentGames(game);
     localStorage.setItem("game", JSON.stringify(game));
-    const dudu = JSON.parse(localStorage.getItem("game"));
-    console.log("TITI", dudu);
   };
 
   const titleValidation =
