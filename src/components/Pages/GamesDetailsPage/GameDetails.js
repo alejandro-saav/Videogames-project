@@ -2,12 +2,18 @@ import GamesContext from "../../store/games-context";
 import classes from "./GameDetails.module.css";
 import { useContext, useEffect } from "react";
 import SummaryContent from "./SummaryContent";
+import useFetch from "../../../hooks/useFetch";
 
 const GameDetails = () => {
+  const gamesCtx = useContext(GamesContext);
+  const { isLoading, error, sendRequest: fetchGames } = useFetch();
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (gamesCtx.currentGame.length === 0) {
+      const game = JSON.parse(localStorage.getItem("game"));
+      gamesCtx.setCurrentGames(game);
+    }
   }, []);
-  const gamesCtx = useContext(GamesContext);
   const getDate = new Date(gamesCtx.currentGame[0].date * 1000);
   const formatDate = getDate.toLocaleDateString("en-GB");
   const screenshotIsArray =

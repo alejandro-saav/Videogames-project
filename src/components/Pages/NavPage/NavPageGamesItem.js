@@ -39,6 +39,7 @@ const RecentlyPageItem = (props) => {
       game_modes: props.game_modes,
     };
     gamesCtx.setCurrentGames(game);
+    localStorage.setItem("game", JSON.stringify(game));
   };
   return (
     <div className={classes.maincontainer} onClick={itemOnClickHandler}>

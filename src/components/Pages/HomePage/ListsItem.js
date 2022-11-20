@@ -37,6 +37,7 @@ const ConsoleReleasedItem = (props) => {
       game_modes: props.game_modes,
     };
     gamesCtx.setCurrentGames(game);
+    localStorage.setItem("game", JSON.stringify(game));
   };
   return (
     <NavLink
