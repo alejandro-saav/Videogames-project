@@ -9,7 +9,7 @@ const useFetch = () => {
   const commonHttpHeaders = {
     Accept: "application/json",
     "Client-ID": "o8hd89dcqn6tvksmnse3kzec2we213",
-    Authorization: "Bearer nm1c13pd5qgbuemxxlq6vwc3c12w2l",
+    Authorization: "Bearer 7qkaign1rf5i2rmz4jfyo46scw525f",
     "X-Requested-With": XMLHttpRequest,
   };
 
