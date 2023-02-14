@@ -1,6 +1,6 @@
 [[redirects]]
   headers = {X-From = "Netlify"}
 [[headers]]
-  for = "/*"
+  for = "/Videogames-project/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
