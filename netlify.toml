@@ -1,6 +1,4 @@
 [[redirects]]
-  //from = "/*"
-  //to = "/index.html"
   from = "/api/*"
   to = "https://api.igdb.com/:splat"
   status = 200
