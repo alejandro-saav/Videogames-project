@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  from = "v4/multiquery"
+  to = "https://api.igdb.com/"
   status = 200
   force = true
 
