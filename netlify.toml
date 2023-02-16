@@ -1,5 +1,7 @@
 [[redirects]]
-  headers = {X-From = "Netlify"}
+  from = "/*"
+  to = "/index.html"
+  status = 200
 [[headers]]
   for = "/Videogames-project/*"
   [headers.values]
