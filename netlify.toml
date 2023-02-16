@@ -1,42 +1,8 @@
-[build]
-  functions = "lambda/"
-
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
   force = true
-
-[build.environment]
-  AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
-  AWS_LAMBDA_FUNCTION_HANDLER = "src/lambda.handler"
-  AWS_LAMBDA_FUNCTION_MEMORY_SIZE = 1024
-  AWS_LAMBDA_TIMEOUT = 10
-
-[[plugins]]
-  package = "netlify-plugin-inline-functions-env"
-  [plugins.inputs]
-    ENV = "production"
-
-[[plugins]]
-  package = "@netlify/plugin-functions-core"
-  [plugins.inputs]
-    extensions = "js,json"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    distDir = ".next"
-    args = "start"
-    buildCommand = "npm run build"
-    installCommand = "npm install"
-
-[[plugins]]
-  package = "netlify-plugin-chokidar"
-
-[dev]
-  command = "npm run dev"
-  publish = "public"
 
 [[headers]]
   for = "/*"
