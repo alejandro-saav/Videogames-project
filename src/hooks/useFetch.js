@@ -25,13 +25,14 @@ const useFetch = () => {
         body: requestConfig.body,
       });
 
-      if (!response.ok) {
-        throw new Error("Request failed!");
-      }
-
+      //if (!response.ok) {
+      //  throw new Error("Request failed!");
+      //}
+console.log(response);
       const data = await response.json();
       applyData(data);
     } catch (err) {
+      console.log(err);
       setError(err.message || "Something went wrong!");
     }
     setIsLoading(false);
