@@ -1,5 +1,1 @@
-[[redirects]]
-  from = "v4/multiquery"
-  to = "https://api.igdb.com/"
-  status = 200
-  force = true
+
