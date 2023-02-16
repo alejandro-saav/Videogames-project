@@ -80,6 +80,7 @@ export const GamesContextProvider = (props) => {
   const [currentGame, setCurrentGame] = useState([]);
   const { isLoading, error, sendRequest: fetchGames } = useFetch();
   const [navMobState, setNavMobState] = useState(false);
+  console.log(error);
   useEffect(() => {
     // console.log("HI!  ");
     const getMain = (data) => {
