@@ -1,2 +1,5 @@
-v4/multiquery/*  https://api.igdb.com/:splat  200
+from = "v4/multiquery"
+to = "https://api.igdb.com/"
+status = 200
+headers = { Access-Control-Allow-Origin = "*", Authorization = "Bearer 7qkaign1rf5i2rmz4jfyo46scw525f"}
 /*    /index.html   200
