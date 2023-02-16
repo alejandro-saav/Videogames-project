@@ -1,5 +1,5 @@
 from = "v4/multiquery"
-to = "https://api.igdb.com/"
+to = "https://api.igdb.com/:splat"
 status = 200
 headers = { Access-Control-Allow-Origin = "*", Authorization = "Bearer 7qkaign1rf5i2rmz4jfyo46scw525f"}
 force = true
