@@ -1,7 +1,10 @@
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  //from = "/*"
+  //to = "/index.html"
+  from = "/api/*"
+  to = "https://api.igdb.com/:splat"
   status = 200
+  force = true
 [[headers]]
   for = "/Videogames-project/*"
   [headers.values]
