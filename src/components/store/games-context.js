@@ -10,12 +10,18 @@ const GamesContext = React.createContext({
   newFuckingWindow: "",
 });
 
+function getCurrentDateUnix() {
+  const now = Date.now();
+  const unixTime = Math.round(now / 1000);
+  return unixTime.toString();
+}
+
 const fields = `fields name,genres.name,aggregated_rating,cover.url,involved_companies.company.name,videos.video_id,screenshots.url,first_release_date,summary,platforms.name,similar_games.name,similar_games.cover.url,similar_games.genres.name,game_modes.name;`;
 const nullExcludeStr = `where name != null & genres.name != null & aggregated_rating != null & cover.url != null & videos.video_id != null`;
 const newMainQuery = `query games "Main Games" {${fields}
     sort total_rating desc; ${nullExcludeStr} & first_release_date > 1654636672;limit 15;};`;
 
-const recentHttpStr = `query games "Recentlys" {${fields} sort first_release_date desc; where first_release_date != null; ${nullExcludeStr} & first_release_date < 1660770765; limit 15;};`;
+const recentHttpStr = `query games "Recentlys" {${fields} sort first_release_date desc; where first_release_date != null; ${nullExcludeStr} & first_release_date < ${getCurrentDateUnix()}; limit 15;};`;
 
 const platformsHttpStr = `query games "PS4 Games" {${fields} sort first_release_date desc;
                ${nullExcludeStr} & first_release_date < 1660770765 & release_dates.platform = 48; limit 10;};
@@ -91,7 +97,7 @@ export const GamesContextProvider = (props) => {
     fetchGames(
       {
         //url: "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/multiquery",
-        //url: "https://api.igdb.com/v4/multiquery",
+        // url: "https://api.igdb.com/v4/multiquery",
         url: "v4/multiquery",
         // url: "https://id.twitch.tv/oauth2/token?client_id=o8hd89dcqn6tvksmnse3kzec2we213&client_secret=dfezzmfofm10hi45zurquqrcig8m39&grant_type=client_credentials",
         method: "POST",
@@ -111,6 +117,7 @@ export const GamesContextProvider = (props) => {
     recentlyGames: itemsList[1],
     gamesByPlatform: itemsList[2],
     isLoading,
+    error,
     currentGame,
     setCurrentGames,
     navMobState,

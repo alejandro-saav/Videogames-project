@@ -3,12 +3,15 @@ import SliderItem from "./SliderItem";
 import { useContext, useState, useEffect } from "react";
 import GamesContext from "../../store/games-context";
 import LoadingCard from "./LoadingCard";
+import ErrorCard from "./ErrorCard";
 
 const MainContent = (props) => {
   const gamesCtx = useContext(GamesContext);
   const hasItem = gamesCtx.mainGames ? true : false;
   const [numberOfCards, setNumberOfCards] = useState(0);
-
+  const isLoading = gamesCtx.isLoading;
+  const hasError = gamesCtx.error;
+  console.log(hasError);
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 480px)").matches
   );
@@ -92,10 +95,18 @@ const MainContent = (props) => {
                   );
                 }
               })
-            : fields.map((item, index) => {
+            : isLoading
+            ? fields.map((item, index) => {
                 return (
                   <div className={classes.item} key={index}>
                     <LoadingCard />
+                  </div>
+                );
+              })
+            : fields.map((item, index) => {
+                return (
+                  <div className={classes.item} key={index}>
+                    <ErrorCard />
                   </div>
                 );
               })}
