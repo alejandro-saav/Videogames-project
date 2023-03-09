@@ -67,49 +67,52 @@ const MainContent = (props) => {
           &#8249;
         </span>
         <div className={classes.container}>
-          {hasItem
-            ? props.games.map((item, index) => {
-                if (
-                  index < numberOfCards + cardsRender &&
-                  index >= numberOfCards
-                ) {
-                  return (
-                    <div className={classes.item} key={index}>
-                      <SliderItem
-                        title={item.name}
-                        genre={item.genre}
-                        cover={item.cover.replace("t_thumb", "t_720p")}
-                        puntuacion={
-                          item.review ? item.review?.toFixed(0) : "N/A"
-                        }
-                        date={item.date}
-                        company={item.company}
-                        screenshot={item.screenshot}
-                        video={item.video}
-                        summary={item.summary}
-                        platforms={item.platforms}
-                        similar_games={item.similar_games}
-                        game_modes={item.game_modes}
-                      />
-                    </div>
-                  );
-                }
-              })
-            : isLoading
-            ? fields.map((item, index) => {
+          {hasItem ? (
+            props.games.map((item, index) => {
+              if (
+                index < numberOfCards + cardsRender &&
+                index >= numberOfCards
+              ) {
                 return (
                   <div className={classes.item} key={index}>
-                    <LoadingCard />
+                    <SliderItem
+                      title={item.name}
+                      genre={item.genre}
+                      cover={item.cover.replace("t_thumb", "t_720p")}
+                      puntuacion={item.review ? item.review?.toFixed(0) : "N/A"}
+                      date={item.date}
+                      company={item.company}
+                      screenshot={item.screenshot}
+                      video={item.video}
+                      summary={item.summary}
+                      platforms={item.platforms}
+                      similar_games={item.similar_games}
+                      game_modes={item.game_modes}
+                    />
                   </div>
                 );
-              })
-            : fields.map((item, index) => {
-                return (
-                  <div className={classes.item} key={index}>
-                    <ErrorCard />
-                  </div>
-                );
-              })}
+              }
+            })
+          ) : isLoading ? (
+            fields.map((item, index) => {
+              return (
+                <div className={classes.item} key={index}>
+                  <LoadingCard />
+                </div>
+              );
+            })
+          ) : (
+            // : fields.map((item, index) => {
+            //     return (
+            //       <div className={classes.item} key={index}>
+            //         <ErrorCard message={hasError} />
+            //       </div>
+            //     );
+            //   })}
+            <div className={classes.item} key={1}>
+              <ErrorCard message={hasError} />
+            </div>
+          )}
         </div>
       </div>
     </>

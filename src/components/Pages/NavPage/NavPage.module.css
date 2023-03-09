@@ -51,6 +51,15 @@
   text-decoration: none;
 }
 
+.item {
+  min-height: 20rem;
+  /* width: 70%; */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  grid-column: 2/4;
+}
+
 @media (max-width: 1020px) {
   .maincontainer {
     grid-template-columns: repeat(2, 1fr);

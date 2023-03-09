@@ -22,14 +22,18 @@ const useFetch = () => {
           : commonHttpHeaders,
         body: requestConfig.body,
       });
-
+      // console.log(response);
       if (!response.ok) {
         throw new Error("Request failed!");
       }
       const data = await response.json();
       applyData(data);
     } catch (err) {
-      setError(err.message || "Something went wrong!");
+      if (err.message == "Failed to fetch") {
+        setError("Cors error");
+      } else {
+        setError(err.message || "Something went wrong!");
+      }
     }
     setIsLoading(false);
   }, []);

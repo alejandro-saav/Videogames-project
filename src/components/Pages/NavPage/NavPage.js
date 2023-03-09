@@ -6,6 +6,7 @@ import Pagination from "./Pagination";
 import FilterPage from "./FilterOptions";
 import { NavLink } from "react-router-dom";
 import LoadingCard from "../HomePage/LoadingCard";
+import ErrorCard from "../HomePage/ErrorCard";
 const RecentylPage = (props) => {
   const { isLoading, error, sendRequest: fetchGames } = useFetch();
   const [gamesArray, setGamesArray] = useState([]);
@@ -50,41 +51,47 @@ const RecentylPage = (props) => {
         <FilterPage filterHandler={setFilter} />
       </div>
       <div className={classes.maincontainer}>
-        {gamesArray.length > 0
-          ? currentGames.map((item, index) => {
-              return (
-                <NavLink
-                  to={`/game/${item.name.replaceAll(" ", "")}`}
-                  className={classes.itemcontainer}
+        {gamesArray.length > 0 ? (
+          currentGames.map((item, index) => {
+            return (
+              <NavLink
+                to={`/game/${item.name.replaceAll(" ", "")}`}
+                className={classes.itemcontainer}
+                key={index}
+              >
+                <NavPageGamesItem
+                  name={item.name}
+                  genre={item.genres}
+                  cover={item.cover.url}
+                  score={item.aggregated_rating}
+                  date={item.first_release_date}
+                  company={item.involved_companies}
+                  screenshot={item.screenshots}
+                  video={item.videos[0].video_id}
+                  summary={item.summary}
+                  platforms={item.platforms}
+                  similar_games={item.similar_games}
+                  game_modes={item.game_modes}
+                  highlighted={props.highlighted}
+                  highlightedType={props.highlightedType}
                   key={index}
-                >
-                  <NavPageGamesItem
-                    name={item.name}
-                    genre={item.genres}
-                    cover={item.cover.url}
-                    score={item.aggregated_rating}
-                    date={item.first_release_date}
-                    company={item.involved_companies}
-                    screenshot={item.screenshots}
-                    video={item.videos[0].video_id}
-                    summary={item.summary}
-                    platforms={item.platforms}
-                    similar_games={item.similar_games}
-                    game_modes={item.game_modes}
-                    highlighted={props.highlighted}
-                    highlightedType={props.highlightedType}
-                    key={index}
-                  />
-                </NavLink>
-              );
-            })
-          : fields.map((item, index) => {
-              return (
-                <div className={classes.loadingcontainer} key={index}>
-                  <LoadingCard />
-                </div>
-              );
-            })}
+                />
+              </NavLink>
+            );
+          })
+        ) : isLoading ? (
+          fields.map((item, index) => {
+            return (
+              <div className={classes.loadingcontainer} key={index}>
+                <LoadingCard />
+              </div>
+            );
+          })
+        ) : (
+          <div className={classes.item}>
+            <ErrorCard message={error} />
+          </div>
+        )}
       </div>
       <>
         <Pagination
