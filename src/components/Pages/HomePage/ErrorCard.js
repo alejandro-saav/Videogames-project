@@ -2,7 +2,6 @@ import classes from "./ErrorCard.module.css";
 
 const ErrorCard = (props) => {
   const error = props.message ? props.message.startsWith("Cors") : false;
-  console.log(props.message);
   return (
     <div className={classes.error_card}>
       <h2>ERROR</h2>

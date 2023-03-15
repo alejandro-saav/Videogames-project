@@ -11,7 +11,6 @@ const MainContent = (props) => {
   const [numberOfCards, setNumberOfCards] = useState(0);
   const isLoading = gamesCtx.isLoading;
   const hasError = gamesCtx.error;
-  console.log(hasError);
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 480px)").matches
   );
