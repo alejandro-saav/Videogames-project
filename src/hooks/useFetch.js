@@ -6,7 +6,7 @@ const useFetch = () => {
   const commonHttpHeaders = {
     Accept: "application/json",
     "Client-ID": "o8hd89dcqn6tvksmnse3kzec2we213",
-    Authorization: "Bearer 5f9097wno5xr9quoxpdagj0begmtgd",
+    Authorization: "Bearer hqc2xo5qqk6zwg360ycjvrle4rba6l",
     "X-Requested-With": XMLHttpRequest,
     "Access-Control-Allow-Origin": "*",
   };
@@ -29,6 +29,7 @@ const useFetch = () => {
       const data = await response.json();
       applyData(data);
     } catch (err) {
+      console.log(err);
       if (err.message == "Failed to fetch") {
         setError("Cors error");
       } else {

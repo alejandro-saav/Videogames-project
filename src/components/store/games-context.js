@@ -17,7 +17,7 @@ function getCurrentDateUnix() {
 }
 
 const fields = `fields name,genres.name,aggregated_rating,cover.url,involved_companies.company.name,videos.video_id,screenshots.url,first_release_date,summary,platforms.name,similar_games.name,similar_games.cover.url,similar_games.genres.name,game_modes.name;`;
-const nullExcludeStr = `where name != null & genres.name != null & aggregated_rating != null & cover.url != null & videos.video_id != null`;
+const nullExcludeStr = `where name != null & genres.name != null & aggregated_rating != null & cover.url != null & videos.video_id != null & involved_companies.company.name != null`;
 const newMainQuery = `query games "Main Games" {${fields}
     sort total_rating desc; ${nullExcludeStr} & first_release_date > 1654636672;limit 15;};`;
 
