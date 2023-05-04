@@ -30,7 +30,7 @@ const RecentylPage = (props) => {
       {
         // url: `/v4/games`,
         // url: `https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/games`,
-        url: `https://api.igdb.com/v4/games`,
+        url: `https://corsproxy.io/?https://api.igdb.com/v4/games`,
         method: "POST",
         body: `${props.query + filter}; limit 400;`,
       },
