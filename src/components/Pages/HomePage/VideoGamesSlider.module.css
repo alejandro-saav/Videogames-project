@@ -34,9 +34,9 @@
 
 .item {
   min-height: 20rem;
-  width: 70%;
   padding: 10px;
   display: flex;
+  width: 70%;
 }
 
 .arrow {
@@ -82,12 +82,21 @@
 }
 
 @media (max-width: 480px) {
+  .container {
+    justify-content: flex-start;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .item {
+    padding: 1px;
+  }
   .slider {
     margin: 0;
     width: 100%;
   }
   .arrow {
     font-size: 2rem;
+    display: none;
   }
   .rarrow {
     right: 1.6rem;

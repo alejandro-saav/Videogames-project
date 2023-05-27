@@ -31,7 +31,7 @@ const MainContent = (props) => {
     cardsRender = 3;
   }
   if (matches) {
-    cardsRender = 1;
+    cardsRender = 15;
   }
 
   const clickRightHandler = () => {
@@ -101,13 +101,6 @@ const MainContent = (props) => {
               );
             })
           ) : (
-            // : fields.map((item, index) => {
-            //     return (
-            //       <div className={classes.item} key={index}>
-            //         <ErrorCard message={hasError} />
-            //       </div>
-            //     );
-            //   })}
             <div className={classes.item} key={1}>
               <ErrorCard message={hasError} />
             </div>

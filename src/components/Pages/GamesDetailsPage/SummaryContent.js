@@ -38,7 +38,7 @@ const SummaryContent = () => {
           {gamesCtx.currentGame[0].genre.map((item, index) => {
             return (
               <a href="#" className={classes.genreslinks} key={index}>
-                <span>{item.name}</span>
+                <span key={index + 1}>{item.name}</span>
               </a>
             );
           })}

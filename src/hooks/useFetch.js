@@ -7,7 +7,7 @@ const useFetch = () => {
     Accept: "application/json",
     "Client-ID": "o8hd89dcqn6tvksmnse3kzec2we213",
     Authorization: "Bearer hqc2xo5qqk6zwg360ycjvrle4rba6l",
-    "X-Requested-With": XMLHttpRequest,
+    // "X-Requested-With": XMLHttpRequest,
     "Access-Control-Allow-Origin": "*",
   };
 

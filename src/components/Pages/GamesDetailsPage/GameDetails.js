@@ -68,10 +68,10 @@ const GameDetails = () => {
           ></iframe>
         </div>
         <div className={classes.thirdcontainer}>
-          <img src={formatedScreenshot} height="100%" />
+          <img src={formatedScreenshot} />
         </div>
         <div className={classes.fourthcontainer}>
-          <img src={formatedScreenshotTwo} height="100%" />
+          <img src={formatedScreenshotTwo} />
         </div>
       </div>
       <>

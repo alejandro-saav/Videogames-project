@@ -59,6 +59,7 @@
   border-radius: 5px;
   pointer-events: none;
   z-index: 1;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /** Careful */
@@ -93,5 +94,11 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .itemcontainer {
+    width: 60vw;
   }
 }

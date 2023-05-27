@@ -16,7 +16,7 @@ function getCurrentDateUnix() {
   return unixTime.toString();
 }
 
-const fields = `fields name,genres.name,aggregated_rating,cover.url,involved_companies.company.name,videos.video_id,screenshots.url,first_release_date,summary,platforms.name,similar_games.name,similar_games.cover.url,similar_games.genres.name,game_modes.name;`;
+const fields = `fields name,genres.name,aggregated_rating,cover.url,involved_companies.company.name,videos.video_id,screenshots.url,first_release_date,summary,platforms.name,similar_games.name,similar_games.cover.url,similar_games.genres.name,game_modes.name,release_dates.platform;`;
 const nullExcludeStr = `where name != null & genres.name != null & aggregated_rating != null & cover.url != null & videos.video_id != null & involved_companies.company.name != null`;
 const newMainQuery = `query games "Main Games" {${fields}
     sort total_rating desc; ${nullExcludeStr} & first_release_date > 1654636672;limit 15;};`;
@@ -24,13 +24,13 @@ const newMainQuery = `query games "Main Games" {${fields}
 const recentHttpStr = `query games "Recentlys" {${fields} sort first_release_date desc; where first_release_date != null; ${nullExcludeStr} & first_release_date < ${getCurrentDateUnix()}; limit 15;};`;
 
 const platformsHttpStr = `query games "PS4 Games" {${fields} sort first_release_date desc;
-               ${nullExcludeStr} & first_release_date < 1660770765 & release_dates.platform = 48; limit 10;};
+               ${nullExcludeStr} & first_release_date < ${getCurrentDateUnix()} & release_dates.platform = 48; limit 10;};
                query games "XBOX Games" {${fields} sort first_release_date desc;
-               ${nullExcludeStr} & first_release_date < 1660770765 & release_dates.platform = 49; limit 10;};
+               ${nullExcludeStr} & first_release_date < ${getCurrentDateUnix()} & release_dates.platform = 49; limit 10;};
                query games "PC Games" {${fields} sort first_release_date desc;
-               ${nullExcludeStr} & first_release_date < 1660770765 & release_dates.platform = 6; limit 10;};
+               ${nullExcludeStr} & first_release_date < ${getCurrentDateUnix()} & release_dates.platform = 6; limit 10;};
                query games "SWITCH Games" {${fields} sort first_release_date desc;
-               ${nullExcludeStr} & first_release_date < 1660770765 & release_dates.platform = 130; limit 10;};`;
+               ${nullExcludeStr} & first_release_date < ${getCurrentDateUnix()} & release_dates.platform = 130; limit 10;};`;
 
 const bodyHttpStr = `${newMainQuery + recentHttpStr + platformsHttpStr}`;
 

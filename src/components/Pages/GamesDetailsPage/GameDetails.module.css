@@ -90,6 +90,7 @@ h3 {
 .covercontainer img {
   height: 100%;
   width: 100%;
+  image-rendering: -webkit-optimize-contrast;
 }
 .videocontainer {
   background-color: #fff;
@@ -110,6 +111,7 @@ h3 {
 .thirdcontainer img {
   height: 100%;
   width: 100%;
+  image-rendering: -webkit-optimize-contrast;
 }
 .fourthcontainer {
   height: 13rem;
@@ -120,6 +122,7 @@ h3 {
 .fourthcontainer img {
   height: 100%;
   width: 100%;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 @media (max-width: 720px) {
