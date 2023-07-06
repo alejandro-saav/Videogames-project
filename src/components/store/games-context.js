@@ -89,7 +89,7 @@ export const GamesContextProvider = (props) => {
   useEffect(() => {
     // console.log("HI!  ");
     const getMain = (data) => {
-      console.log(data);
+      // console.log(data);
       const gamesData = getGames(data);
       setItemsList((prev) => [...gamesData]);
     };
