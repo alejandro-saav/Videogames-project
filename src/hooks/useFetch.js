@@ -6,7 +6,7 @@ const useFetch = () => {
   const commonHttpHeaders = {
     Accept: "application/json",
     "Client-ID": "o8hd89dcqn6tvksmnse3kzec2we213",
-    Authorization: "Bearer 452vo9465pxfgrfc39f0373ce4998p",
+    Authorization: "Bearer frqyiu2e2y9t9ydvpd396ckzp3u3h0",
     // "X-Requested-With": XMLHttpRequest,
     "Access-Control-Allow-Origin": "*",
   };
