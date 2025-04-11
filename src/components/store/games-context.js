@@ -89,7 +89,7 @@ export const GamesContextProvider = (props) => {
   useEffect(() => {
     // console.log("HI!  ");
     const getMain = (data) => {
-      // console.log(data);
+      console.log(data);
       const gamesData = getGames(data);
       setItemsList((prev) => [...gamesData]);
     };
@@ -97,8 +97,9 @@ export const GamesContextProvider = (props) => {
       {
         // url: "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/multiquery",
         // url: "https://api.rawg.io/api/games?key=f9a75a49974649c7a1520b3e7fc70197",
-        url: "https://corsproxy.io/?https://api.igdb.com/v4/multiquery",
+        // url: "https://corsproxy.io/?url=https://api.igdb.com/v4/multiquery",
         // url: "https://api.igdb.com/v4/multiquery",
+        url: "/.netlify/functions/proxy?endpoint=first",
         // url: "v4/multiquery",
         // url: "https://id.twitch.tv/oauth2/token?client_id=o8hd89dcqn6tvksmnse3kzec2we213&client_secret=dfezzmfofm10hi45zurquqrcig8m39&grant_type=client_credentials",
         method: "POST",
@@ -107,7 +108,6 @@ export const GamesContextProvider = (props) => {
       },
       getMain
     );
-    // console.log(itemsList);
   }, []);
 
   const setCurrentGames = (game) => {

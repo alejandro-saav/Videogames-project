@@ -32,7 +32,7 @@ const useFetch = () => {
       applyData(data);
     } catch (err) {
       console.log(err);
-      if (err.message == "Failed to fetch") {
+      if (err.message === "Failed to fetch") {
         setError("Cors error");
       } else {
         setError(err.message || "Something went wrong!");
