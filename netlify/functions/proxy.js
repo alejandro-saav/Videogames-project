@@ -12,7 +12,7 @@ exports.handler = async function (event, context) {
       headers: {
         "Content-Type": "application/json",
         "Client-ID": "o8hd89dcqn6tvksmnse3kzec2we213",
-        Authorization: "Bearer c3pvgi1kdoqhlmtns82eie77vqcr0w",
+        Authorization: "Bearer spa6y2vczl6ohsatmb7prohz5utszp",
         // add Authorization or API Key here if needed
       },
     };
